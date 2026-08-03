@@ -2,12 +2,11 @@
 layout: about
 title: About
 permalink: /
-subtitle: Vision AI Engineer · Robot Vision Research Engineer
-
+subtitle: Vision AI Researcher at K3I · Robot Vision · ROS2 · Embodied AI
 profile:
-  align: right
+  align: left
   image: prof_pic.jpg
-  image_circular: false
+  image_circular: true
   more_info:
 
 selected_papers: true
@@ -24,11 +23,20 @@ latest_posts:
   limit: 3
 ---
 
-I build **vision systems that connect research ideas to working robots and edge devices**. My work spans perception, ROS2 navigation, vision-language systems, and deployment-aware AI—from sensing and model design to system integration and evaluation.
+<div class="hero-links">
+  <a href="mailto:ingon4359@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+  <a href="https://scholar.google.com/citations?user=76h0N_QAAAAJ" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i> Scholar</a>
+  <a href="https://github.com/ingon1026" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+  <a href="https://www.linkedin.com/in/ingon1026" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+  <a href="https://velog.io/@ingon1026" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-pen-nib"></i> Blog</a>
+  <a href="/cv/"><i class="fa-solid fa-file"></i> CV</a>
+</div>
 
-My current focus is Robot Vision and context-aware autonomous navigation. During my master's research, I developed an event-driven LLM router for ROS2 navigation that combines visual detections, LiDAR, and localization signals to select driving policies in crowded environments.
+I am a **Vision AI Researcher at K3I** (Vision AI Lab), building vision systems that connect research ideas to working robots and edge devices. My work spans perception, ROS2 navigation, vision-language systems, and deployment-aware AI—from sensing and model design to system integration and evaluation.
 
-## Focus
+I received my M.S. in IT Convergence Engineering from [Kumoh National Institute of Technology](https://wens.kumoh.ac.kr/home) (WENS Lab, 2026), where I developed an event-driven LLM router for ROS2 navigation that combines visual detections, LiDAR, and localization signals to select driving policies in crowded environments. I earned my B.S. in Electrical Engineering from Korea National University of Transportation (2024).
+
+## Research interests
 
 - **Robot Vision & Navigation:** ROS2, Nav2, SLAM, LiDAR-camera integration, autonomous navigation
 - **Vision AI:** object detection, segmentation, Vision Transformers, temporal visual reasoning
@@ -41,12 +49,56 @@ My current focus is Robot Vision and context-aware autonomous navigation. During
 - [MobileViT Motorcycle Violation Detection](/projects/mobilevit-traffic-violation/) — temporal traffic-event detection deployed on Jetson Orin NX with ROS2.
 - [ROS2 UGV Platform Integration](/projects/ros2-ugv/) — sensors, CAN communication, SLAM, and navigation for an unmanned ground vehicle.
 
-## Experience & education
+<style>
+  /* yaodu-style hero, scoped to this page only */
+  body {
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Noto Sans",
+      "Noto Sans KR",
+      sans-serif;
+  }
 
-I am a **Vision AI Researcher at K3I** (Vision AI Lab, since March 2026). I completed a master's program in IT Convergence Engineering at Kumoh National Institute of Technology (2024–2026) after earning a bachelor's degree in Electrical Engineering from Korea National University of Transportation (2018–2024).
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 0.25rem 0 1.4rem;
+  }
 
-I am interested in research engineering roles where strong perception models must operate reliably within real systems—especially Robot Vision, Visual SLAM, 3D Gaussian Splatting, Embodied AI, and autonomous navigation.
+  .hero-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.38rem 0.95rem;
+    border: 1px solid var(--global-divider-color, #e0e0e0);
+    border-radius: 0.5rem;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--global-text-color, #333);
+    text-decoration: none !important;
+    transition:
+      color 0.15s ease,
+      border-color 0.15s ease,
+      background-color 0.15s ease;
+  }
 
-## Contact
+  .hero-links a:hover {
+    color: var(--global-theme-color, #2698ba);
+    border-color: var(--global-theme-color, #2698ba);
+    background-color: rgba(0, 0, 0, 0.02);
+  }
 
-For research or engineering opportunities, email [ingon4359@gmail.com](mailto:ingon4359@gmail.com) or find me on [GitHub](https://github.com/ingon1026), [LinkedIn](https://www.linkedin.com/in/ingon1026), [Docker Hub](https://hub.docker.com/u/ingon1026), and [Velog](https://velog.io/@ingon1026) (Korean tech blog).
+  .profile img {
+    box-shadow:
+      0 0 0 4px var(--global-divider-color, rgba(0, 0, 0, 0.06)),
+      0 10px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .news table td {
+    font-size: 0.95rem;
+  }
+</style>
