@@ -4,7 +4,7 @@ permalink: /publications/
 title: Publications
 description: Journal articles and conference papers in Vision AI, robotics, and LLM-assisted systems.
 nav: true
-nav_order: 2
+nav_order: 3
 ---
 
 <!-- _pages/publications.md -->

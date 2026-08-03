@@ -3,8 +3,7 @@ layout: page
 title: Experience
 permalink: /experience/
 description: Research and engineering experience across Vision AI, robotics, and embedded deployment.
-nav: true
-nav_order: 5
+nav: false
 ---
 
 ## K3I
