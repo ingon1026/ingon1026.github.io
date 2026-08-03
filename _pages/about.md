@@ -49,4 +49,4 @@ I am interested in research engineering roles where strong perception models mus
 
 ## Contact
 
-For research or engineering opportunities, email [ingon4359@gmail.com](mailto:ingon4359@gmail.com) or visit [GitHub](https://github.com/ingon1026).
+For research or engineering opportunities, email [ingon4359@gmail.com](mailto:ingon4359@gmail.com) or find me on [GitHub](https://github.com/ingon1026), [LinkedIn](https://www.linkedin.com/in/ingon1026), [Docker Hub](https://hub.docker.com/u/ingon1026), and [Velog](https://velog.io/@ingon1026) (Korean tech blog).
