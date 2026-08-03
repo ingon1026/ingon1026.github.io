@@ -21,4 +21,4 @@ Writer identification usually assumes abundant handwriting data per person. This
 
 **Presentation:** 김인곤, 신수용, "소량의 필적 샘플을 활용한 Vision Transformer 기반 메타러닝 작성자 식별 기법," 한국통신학회 학술대회논문집, pp. 582–583, 2025.
 
-**Patent:** Related patent work is described on the [Patents](/patents/) page; identifiers await confirmation.
+**Patent:** A Korean patent application covering this method is listed on the [Patents](/patents/) page.

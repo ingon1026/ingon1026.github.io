@@ -61,6 +61,15 @@ cv:
       - name: Deep-Learning Camera Fault Detection
         summary: Detection and removal of camera noise and environmental artifacts during drone operation, using OpenCV detection and deep-learning denoising.
 
+    Patents:
+      - name: Korean patent applications (KIPO)
+        summary: Nine filed applications spanning robot navigation, UAV/UGV systems, and applied deep learning.
+        highlights:
+          - Hybrid LLM navigation system performing semantics-based safety assessment
+          - Vision Transformer-based meta-learning for writer identification from few handwriting samples
+          - Hyperspectral camera-based intelligent agriculture using unmanned aerial and ground vehicles
+          - Deep-learning UAV swarm and acoustic deterrence for airport bird and wildlife management (10-2025-0008806)
+
     Awards:
       - title: 3rd Place, Surveillance and Reconnaissance—Civilian Division
         date: 2024-05
