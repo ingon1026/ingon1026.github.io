@@ -4,6 +4,7 @@ title: Hybrid LLM Navigation System
 description: Event-driven context reasoning and policy selection for ROS2 navigation.
 category: featured
 importance: 1
+img: assets/img/projects/hybrid-llm-navigation.png
 permalink: /projects/hybrid-llm-navigation/
 ---
 
@@ -37,4 +38,4 @@ The LLM-assisted system maintained larger minimum safe distances and made fewer 
 
 `ROS2` · `Nav2` · `YOLO` · `LiDAR` · `AMCL` · `LLM` · `Gazebo`
 
-**TODO:** Add the final thesis title, advisor, repository, paper, and demonstration video after confirming public-release permission.
+**Publication:** Kim, In Gon and Shin, Soo Young, "Hybrid LLM Navigation System for Edge-Cloud Reasoning," _The Journal of Korean Institute of Communications and Information Sciences_ (JKICS), vol. 51, no. 6, pp. 1175–1186, 2026.

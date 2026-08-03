@@ -4,6 +4,7 @@ title: LLM-Assisted Strawberry Quality Assessment
 description: Segmentation, quantitative image analysis, retrieval, and natural-language reporting for smart farms.
 category: research
 importance: 4
+img: assets/img/projects/strawberry-quality.png
 permalink: /projects/strawberry-quality/
 ---
 
