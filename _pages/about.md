@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Vision AI Researcher at K3I · Robot Vision · ROS2 · Embodied AI
+subtitle: Vision AI Researcher · Robot Vision · ROS2 · Embodied AI
 
 selected_papers: true
 social: true
@@ -23,8 +23,18 @@ latest_posts:
   <div class="yd-hero-text">
     <h1 class="yd-name">Kim In Gon</h1>
     <p class="yd-role">Vision AI Researcher</p>
-    <p class="yd-affil">Vision AI Lab, K3I</p>
     <p class="yd-loc"><i class="fa-solid fa-location-dot"></i> Republic of Korea</p>
+    <p class="yd-bio">
+      I am a Vision AI Researcher at K3I (Vision AI Lab), building vision systems that connect research ideas to working robots and edge devices. My
+      work spans perception, ROS2 navigation, vision-language systems, and deployment-aware AI—from sensing and model design to system integration
+      and evaluation.
+    </p>
+    <p class="yd-bio">
+      I received my M.S. in IT Convergence Engineering from
+      <a href="https://wens.kumoh.ac.kr/home" target="_blank" rel="noopener noreferrer">Kumoh National Institute of Technology</a> (WENS Lab, 2026),
+      where I developed an event-driven LLM router for ROS2 navigation that combines visual detections, LiDAR, and localization signals to select
+      driving policies in crowded environments. I earned my B.S. in Electrical Engineering from Korea National University of Transportation (2024).
+    </p>
     <div class="yd-links">
       <a href="mailto:ingon4359@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
       <a href="https://scholar.google.com/citations?user=76h0N_QAAAAJ" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i> Scholar</a>
@@ -47,12 +57,6 @@ latest_posts:
     <li><span>May 2024</span> Won 3rd place (Surveillance and Reconnaissance, civilian division) at the 2nd ROK Second Operations Command Dronebot Combat Competition.</li>
   </ul>
 </div>
-
-## About
-
-I am a **Vision AI Researcher at K3I** (Vision AI Lab), building vision systems that connect research ideas to working robots and edge devices. My work spans perception, ROS2 navigation, vision-language systems, and deployment-aware AI—from sensing and model design to system integration and evaluation.
-
-I received my M.S. in IT Convergence Engineering from [Kumoh National Institute of Technology](https://wens.kumoh.ac.kr/home) (WENS Lab, 2026), where I developed an event-driven LLM router for ROS2 navigation that combines visual detections, LiDAR, and localization signals to select driving policies in crowded environments. I earned my B.S. in Electrical Engineering from Korea National University of Transportation (2024).
 
 ## Research
 
@@ -125,19 +129,19 @@ I received my M.S. in IT Convergence Engineering from [Kumoh National Institute 
   /* hero */
   .yd-hero {
     display: flex;
-    align-items: center;
-    gap: 2.2rem;
-    margin: 1rem 0 1.6rem;
-    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2.4rem;
+    margin: 1.2rem 0 1.8rem;
   }
 
   .yd-avatar {
-    width: 11rem;
-    height: 11rem;
+    width: 12rem;
+    height: 12rem;
     border-radius: 9999px;
     object-fit: cover;
+    flex-shrink: 0;
     box-shadow:
-      0 0 0 4px var(--global-divider-color, rgba(0, 0, 0, 0.08)),
+      0 0 0 4px rgba(0, 86, 179, 0.12),
       0 10px 24px rgba(0, 0, 0, 0.14);
   }
 
@@ -149,18 +153,13 @@ I received my M.S. in IT Convergence Engineering from [Kumoh National Institute 
   }
 
   .yd-role {
-    font-size: 1.18rem;
+    font-size: 1.15rem;
     color: var(--global-text-color-light, #828282);
-    margin: 0 0 0.1rem;
-  }
-
-  .yd-affil {
-    font-size: 1rem;
     margin: 0 0 0.15rem;
   }
 
   .yd-loc {
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     color: var(--global-text-color-light, #828282);
     margin: 0 0 0.9rem;
   }
@@ -169,11 +168,18 @@ I received my M.S. in IT Convergence Engineering from [Kumoh National Institute 
     margin-right: 0.25rem;
   }
 
+  .yd-bio {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0 0 0.7rem;
+  }
+
   /* link buttons */
   .yd-links {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-top: 0.4rem;
   }
 
   .yd-links a {
@@ -193,8 +199,8 @@ I received my M.S. in IT Convergence Engineering from [Kumoh National Institute 
   }
 
   .yd-links a:hover {
-    color: var(--global-theme-color, #2698ba);
-    border-color: var(--global-theme-color, #2698ba);
+    color: var(--global-theme-color, #0056b3);
+    border-color: var(--global-theme-color, #0056b3);
   }
 
   /* recent news card */
@@ -253,7 +259,7 @@ I received my M.S. in IT Convergence Engineering from [Kumoh National Institute 
   }
 
   .yd-card h4 i {
-    color: var(--global-theme-color, #2698ba);
+    color: var(--global-theme-color, #0056b3);
     margin-right: 0.4rem;
   }
 
@@ -331,13 +337,15 @@ I received my M.S. in IT Convergence Engineering from [Kumoh National Institute 
   @media (max-width: 768px) {
     .yd-hero {
       flex-direction: column;
-      text-align: center;
+      align-items: center;
     }
 
     .yd-hero-text {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      text-align: center;
+    }
+
+    .yd-hero-text .yd-bio {
+      text-align: left;
     }
 
     .yd-links {
