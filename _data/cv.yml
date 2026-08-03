@@ -9,6 +9,8 @@ cv:
   social_networks:
     - network: GitHub
       username: ingon1026
+    - network: LinkedIn
+      username: ingon1026
 
   sections:
     Experience:
@@ -50,6 +52,12 @@ cv:
 
       - name: ROS2 UGV Platform Integration
         summary: UGV setup, sensor integration, CAN communication, SLAM, and navigation.
+
+      - name: Few-Shot Writer Identification with Vision Transformers
+        summary: Prototype-based meta-learning for identifying writers from limited handwriting samples; presented at a KICS conference.
+
+      - name: Deep-Learning Camera Fault Detection
+        summary: Detection and removal of camera noise and environmental artifacts during drone operation, using OpenCV detection and deep-learning denoising.
 
     Awards:
       - title: 3rd Place, Surveillance and Reconnaissance—Civilian Division

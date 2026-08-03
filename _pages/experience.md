@@ -17,7 +17,7 @@ Working on Vision AI systems that connect model research, data processing, and d
 
 ## Graduate research
 
-**Kumoh National Institute of Technology** · M.S. program, IT Convergence Engineering · 2024–2026
+**Kumoh National Institute of Technology** · M.S. program, IT Convergence Engineering · 2024–2026 · [WENS Lab](https://wens.kumoh.ac.kr/home)
 
 - Researched LLM-assisted context-aware navigation for ROS2 robots.
 - Built UGV sensing, SLAM, and autonomous-navigation pipelines.
