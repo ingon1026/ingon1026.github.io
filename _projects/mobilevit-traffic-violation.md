@@ -4,6 +4,7 @@ title: MobileViT Motorcycle Traffic-Violation Detection
 description: Temporal traffic-event recognition on an embedded ROS2 platform.
 category: featured
 importance: 2
+img: assets/img/projects/mobilevit-traffic-violation.jpg
 permalink: /projects/mobilevit-traffic-violation/
 ---
 
@@ -21,4 +22,4 @@ This work was part of a motorcycle dashcam-based safe-driving evaluation system 
 
 `MobileViT` · `YOLO` · `ROS2` · `Jetson Orin NX` · `PyTorch` · `Python`
 
-**Publication:** Notion records this work as published in a December issue of JKICS. Complete volume, issue, pages, DOI, author order, and publication year remain **TODO** until confirmed.
+**Publication:** Kim, In Gon and Shin, Soo Young, "A MobileViT-Based Detection System for Motorcycle Traffic Violations," _The Journal of Korean Institute of Communications and Information Sciences_ (JKICS), vol. 50, no. 12, pp. 1822–1829, 2025.

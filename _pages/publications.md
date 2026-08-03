@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Selected peer-reviewed work and conference presentations. Bibliographic details marked TODO require confirmation.
+description: Journal articles and conference papers in Vision AI, robotics, and LLM-assisted systems.
 nav: true
 nav_order: 2
 ---

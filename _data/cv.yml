@@ -11,13 +11,15 @@ cv:
       username: ingon1026
     - network: LinkedIn
       username: ingon1026
+    - network: Google Scholar
+      username: 76h0N_QAAAAJ
 
   sections:
     Experience:
       - company: K3I
-        position: Vision AI Researcher
+        position: Vision AI Researcher, Vision AI Lab
         location: Republic of Korea
-        start_date: "TODO"
+        start_date: 2026-03
         end_date: Present
         summary: Research and engineering for applied Vision AI systems. Public details are limited to avoid disclosing confidential company information.
 

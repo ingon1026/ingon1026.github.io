@@ -4,6 +4,7 @@ title: Deep-Learning Camera Fault Detection
 description: Detecting and removing camera noise and environmental artifacts during drone operation.
 category: research
 importance: 6
+img: assets/img/projects/fault-detection.png
 permalink: /projects/fault-detection/
 ---
 

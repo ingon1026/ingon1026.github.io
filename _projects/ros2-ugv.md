@@ -4,6 +4,7 @@ title: ROS2 UGV Platform Integration
 description: Sensor, communication, SLAM, and navigation integration for an unmanned ground vehicle.
 category: featured
 importance: 3
+img: assets/img/projects/ros2-ugv.jpg
 permalink: /projects/ros2-ugv/
 ---
 

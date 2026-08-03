@@ -6,7 +6,7 @@ subtitle: Vision AI Engineer · Robot Vision Research Engineer
 
 profile:
   align: right
-  image:
+  image: prof_pic.jpg
   image_circular: false
   more_info:
 
@@ -43,7 +43,7 @@ My current focus is Robot Vision and context-aware autonomous navigation. During
 
 ## Experience & education
 
-I am a **Vision AI Researcher at K3I**. I completed a master's program in IT Convergence Engineering at Kumoh National Institute of Technology (2024–2026) after earning a bachelor's degree in Electrical Engineering from Korea National University of Transportation (2018–2024).
+I am a **Vision AI Researcher at K3I** (Vision AI Lab, since March 2026). I completed a master's program in IT Convergence Engineering at Kumoh National Institute of Technology (2024–2026) after earning a bachelor's degree in Electrical Engineering from Korea National University of Transportation (2018–2024).
 
 I am interested in research engineering roles where strong perception models must operate reliably within real systems—especially Robot Vision, Visual SLAM, 3D Gaussian Splatting, Embodied AI, and autonomous navigation.
 
