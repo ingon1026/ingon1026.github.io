@@ -1,34 +1,52 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Vision AI Engineer · Robot Vision Research Engineer
 
 profile:
   align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  image:
+  image_circular: false
+  more_info:
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: true
+social: true
 
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: false
+  scrollable: false
+  limit: 3
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false
+  scrollable: false
+  limit: 3
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I build **vision systems that connect research ideas to working robots and edge devices**. My work spans perception, ROS2 navigation, vision-language systems, and deployment-aware AI—from sensing and model design to system integration and evaluation.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My current focus is Robot Vision and context-aware autonomous navigation. During my master's research, I developed an event-driven LLM router for ROS2 navigation that combines visual detections, LiDAR, and localization signals to select driving policies in crowded environments.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+## Focus
+
+- **Robot Vision & Navigation:** ROS2, Nav2, SLAM, LiDAR-camera integration, autonomous navigation
+- **Vision AI:** object detection, segmentation, Vision Transformers, temporal visual reasoning
+- **Embodied & Language AI:** vision-language models, LLM routing, natural-language robot control
+- **Edge Deployment:** Jetson Orin NX, Docker, CUDA, real-time perception pipelines
+
+## Selected work
+
+- [Hybrid LLM Navigation System](/projects/hybrid-llm-navigation/) — context-aware policy selection for ROS2 navigation, evaluated against Nav2 in simulated crowded environments.
+- [MobileViT Motorcycle Violation Detection](/projects/mobilevit-traffic-violation/) — temporal traffic-event detection deployed on Jetson Orin NX with ROS2.
+- [ROS2 UGV Platform Integration](/projects/ros2-ugv/) — sensors, CAN communication, SLAM, and navigation for an unmanned ground vehicle.
+
+## Experience & education
+
+I am a **Vision AI Researcher at K3I**. I completed a master's program in IT Convergence Engineering at Kumoh National Institute of Technology (2024–2026) after earning a bachelor's degree in Electrical Engineering from Korea National University of Transportation (2018–2024).
+
+I am interested in research engineering roles where strong perception models must operate reliably within real systems—especially Robot Vision, Visual SLAM, 3D Gaussian Splatting, Embodied AI, and autonomous navigation.
+
+## Contact
+
+For research or engineering opportunities, email [ingon4359@gmail.com](mailto:ingon4359@gmail.com) or visit [GitHub](https://github.com/ingon1026).

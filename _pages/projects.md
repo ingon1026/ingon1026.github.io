@@ -1,11 +1,11 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Selected research and engineering projects in Robot Vision, ROS2, and edge AI.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [featured, research]
 horizontal: false
 ---
 
