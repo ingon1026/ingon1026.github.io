@@ -188,6 +188,8 @@ newsletter:
 # -----------------------------------------------------------------------------
 
 collections:
+  news:
+    output: true
   projects:
     output: true
 
