@@ -9,11 +9,9 @@ nav_order: 5
 
 ## K3I
 
-**Vision AI Researcher** · Current
+**Vision AI Researcher, Vision AI Lab** · March 2026 – Present
 
 Working on Vision AI systems that connect model research, data processing, and deployable applications. Public project details are intentionally limited to avoid disclosing confidential company information.
-
-**TODO:** Confirm employment start date, official English title, and which company projects may be described publicly.
 
 ## Graduate research
 
