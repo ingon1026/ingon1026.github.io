@@ -10,11 +10,11 @@ nav: false
 
 **Vision AI Researcher, Vision AI Lab** · March 2026 – Present
 
-Working on Vision AI systems that connect model research, data processing, and deployable applications. Public project details are intentionally limited to avoid disclosing confidential company information.
+Research and development of vision models for AI transformation (AX) applications, spanning data, model design, evaluation, and deployment. Public project details are intentionally limited to avoid disclosing confidential company information.
 
 ## Graduate research
 
-**Kumoh National Institute of Technology** · M.S. program, IT Convergence Engineering · 2024–2026 · [WENS Lab](https://wens.kumoh.ac.kr/home)
+**Kumoh National Institute of Technology** · M.S., IT Convergence Engineering · 2024–2026 · [WENS Lab](https://wens.kumoh.ac.kr/home), advised by Prof. [Soo Young Shin](https://scholar.google.com/citations?user=c8JDiHYAAAAJ)
 
 - Researched LLM-assisted context-aware navigation for ROS2 robots.
 - Built UGV sensing, SLAM, and autonomous-navigation pipelines.

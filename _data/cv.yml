@@ -21,7 +21,7 @@ cv:
         location: Republic of Korea
         start_date: 2026-03
         end_date: Present
-        summary: Research and engineering for applied Vision AI systems. Public details are limited to avoid disclosing confidential company information.
+        summary: Research and development of vision models for AI transformation (AX) applications, spanning data, model design, evaluation, and deployment. Public details are limited to avoid disclosing confidential company information.
 
     Education:
       - institution: Kumoh National Institute of Technology
@@ -30,6 +30,7 @@ cv:
         start_date: 2024-03
         end_date: 2026-02
         highlights:
+          - WENS Lab, advised by Prof. Soo Young Shin
           - LLM-assisted context-aware navigation for ROS2 robots
           - Robot perception, autonomous navigation, and system-level evaluation
 

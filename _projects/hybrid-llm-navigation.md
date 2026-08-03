@@ -10,7 +10,7 @@ permalink: /projects/hybrid-llm-navigation/
 
 ## Problem
 
-Distance-based obstacle avoidance alone does not capture congestion, reduced safety margins, or ambiguous natural-language commands. This master's research explored how semantic context can augment a conventional Nav2 pipeline.
+Distance-based obstacle avoidance alone does not capture congestion, reduced safety margins, or ambiguous natural-language commands. This master's research, carried out at WENS Lab under Prof. [Soo Young Shin](https://scholar.google.com/citations?user=c8JDiHYAAAAJ), explored how semantic context can augment a conventional Nav2 pipeline.
 
 ## Contribution
 
