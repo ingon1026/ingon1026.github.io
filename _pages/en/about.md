@@ -26,8 +26,8 @@ latest_posts:
     <p class="yd-role">Vision AI Researcher</p>
     <p class="yd-loc"><i class="fa-solid fa-location-dot"></i> Republic of Korea</p>
     <p class="yd-bio">
-      I am a Vision AI Researcher at K3I (Vision AI Lab), where I research and develop vision models for AI transformation (AX) applications, working
-      across data, model design, evaluation, and deployment.
+      I am a Vision AI Researcher at <a href="https://www.k3i.co.kr/web/index.do" target="_blank" rel="noopener noreferrer">K3I</a> (Vision AI Lab),
+      where I research and develop vision models used in the company's XR and Physical AI products.
     </p>
     <p class="yd-bio">
       I received my M.S. in IT Convergence Engineering from

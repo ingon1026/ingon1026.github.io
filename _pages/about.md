@@ -26,8 +26,8 @@ latest_posts:
     <p class="yd-role">Vision AI 연구원</p>
     <p class="yd-loc"><i class="fa-solid fa-location-dot"></i> 대한민국</p>
     <p class="yd-bio">
-      K3I Vision AI Lab에서 Vision AI 연구원으로 재직하며, AI 전환(AX) 애플리케이션을 위한 비전 모델을 데이터, 모델 설계, 평가, 배포 전반에 걸쳐
-      연구·개발하고 있습니다.
+      <a href="https://www.k3i.co.kr/web/index.do" target="_blank" rel="noopener noreferrer">K3I</a> Vision AI Lab에서 Vision AI 연구원으로 재직하며,
+      회사의 XR·Physical AI 제품에 쓰이는 비전 모델을 연구·개발하고 있습니다.
     </p>
     <p class="yd-bio">
       <a href="https://wens.kumoh.ac.kr/home" target="_blank" rel="noopener noreferrer">금오공과대학교</a> IT융복합공학 석사(WENS 연구실, 2026)를
