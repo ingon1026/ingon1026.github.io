@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 특허
+title: Patents
 permalink: /patents/
 description: 로봇 비전, 무인기·무인차량 시스템, 응용 딥러닝 분야의 국내 특허 출원.
 lang: ko

@@ -1,6 +1,6 @@
 ---
 layout: about
-title: 소개
+title: About
 permalink: /
 subtitle: Vision AI Researcher · Robot Vision · ROS2 · Embodied AI
 lang: ko
