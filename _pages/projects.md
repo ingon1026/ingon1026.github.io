@@ -1,13 +1,16 @@
 ---
 layout: page
-title: Projects
+title: 프로젝트
 permalink: /projects/
-description: Selected research and engineering projects in Robot Vision, ROS2, and edge AI.
+description: Robot Vision, ROS2, 엣지 AI 분야의 연구·엔지니어링 프로젝트.
+lang: ko
 nav: true
 nav_order: 2
 display_categories: [featured, research]
 horizontal: false
 ---
+
+[English](/en/projects/)
 
 <!-- pages/projects.md -->
 <div class="projects">
@@ -17,7 +20,8 @@ horizontal: false
   <a id="{{ category }}" href=".#{{ category }}">
     <h2 class="category">{{ category }}</h2>
   </a>
-  {% assign categorized_projects = site.projects | where: "category", category %}
+  {% assign lang_projects = site.projects | where: "lang", "ko" %}
+  {% assign categorized_projects = lang_projects | where: "category", category %}
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
   <!-- Generate cards for each project -->
   {% if page.horizontal %}
@@ -41,7 +45,8 @@ horizontal: false
 
 <!-- Display projects without categories -->
 
-{% assign sorted_projects = site.projects | sort: "importance" %}
+{% assign lang_projects = site.projects | where: "lang", "ko" %}
+{% assign sorted_projects = lang_projects | sort: "importance" %}
 
   <!-- Generate cards for each project -->
 

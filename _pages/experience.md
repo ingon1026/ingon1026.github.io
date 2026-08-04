@@ -1,30 +1,33 @@
 ---
 layout: page
-title: Experience
+title: 경력
 permalink: /experience/
-description: Research and engineering experience across Vision AI, robotics, and embedded deployment.
+description: Vision AI, 로보틱스, 임베디드 배포에 걸친 연구·엔지니어링 경력.
+lang: ko
 nav: false
 ---
 
+[English](/en/experience/)
+
 ## K3I
 
-**Vision AI Researcher, Vision AI Lab** · March 2026 – Present
+**Vision AI 연구원, Vision AI Lab** · 2026년 3월 – 현재
 
-Research and development of vision models for AI transformation (AX) applications, spanning data, model design, evaluation, and deployment. Public project details are intentionally limited to avoid disclosing confidential company information.
+AI 전환(AX) 애플리케이션을 위한 비전 모델을 데이터, 모델 설계, 평가, 배포 전반에 걸쳐 연구·개발하고 있습니다. 회사 기밀 보호를 위해 공개 프로젝트 상세는 의도적으로 제한합니다.
 
-## Graduate research
+## 대학원 연구
 
-**Kumoh National Institute of Technology** · M.S., IT Convergence Engineering · 2024–2026 · [WENS Lab](https://wens.kumoh.ac.kr/home), advised by Prof. [Soo Young Shin](https://scholar.google.com/citations?user=c8JDiHYAAAAJ)
+**금오공과대학교** · IT융복합공학 석사 · 2024–2026 · [WENS 연구실](https://wens.kumoh.ac.kr/home), 지도교수 [신수용](https://scholar.google.com/citations?user=c8JDiHYAAAAJ) 교수
 
-- Researched LLM-assisted context-aware navigation for ROS2 robots.
-- Built UGV sensing, SLAM, and autonomous-navigation pipelines.
-- Worked across vision models, embedded deployment, and system-level evaluation.
+- ROS2 로봇을 위한 LLM 기반 상황 인지 내비게이션 연구.
+- UGV 센싱, SLAM, 자율주행 파이프라인 구축.
+- 비전 모델, 임베디드 배포, 시스템 수준 평가 전반 수행.
 
-## Undergraduate education
+## 학부
 
-**Korea National University of Transportation** · B.S., Electrical Engineering · 2018–2024
+**한국교통대학교** · 전기공학 학사 · 2018–2024
 
-## Award
+## 수상
 
-**3rd Place, Surveillance and Reconnaissance—Civilian Division**  
-2nd Republic of Korea Second Operations Command Dronebot Combat Competition · May 2024
+**감시정찰 민간부 3위**  
+제2회 대한민국 제2작전사령관배 드론봇 전투경연대회 · 2024년 5월

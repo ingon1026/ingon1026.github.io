@@ -1,8 +1,9 @@
 ---
 layout: about
-title: About
+title: 소개
 permalink: /
 subtitle: Vision AI Researcher · Robot Vision · ROS2 · Embodied AI
+lang: ko
 
 selected_papers: true
 social: true
@@ -19,27 +20,24 @@ latest_posts:
 ---
 
 <div class="yd-hero">
-  <img class="yd-avatar" src="/assets/img/prof_pic.jpg" alt="Kim In Gon — Vision AI Researcher" />
+  <img class="yd-avatar" src="/assets/img/prof_pic.jpg" alt="김인곤 — Vision AI 연구원" />
   <div class="yd-hero-text">
-    <h1 class="yd-name">Kim In Gon</h1>
-    <p class="yd-role">Vision AI Researcher</p>
-    <p class="yd-loc"><i class="fa-solid fa-location-dot"></i> Republic of Korea</p>
+    <h1 class="yd-name">김인곤</h1>
+    <p class="yd-role">Vision AI 연구원</p>
+    <p class="yd-loc"><i class="fa-solid fa-location-dot"></i> 대한민국</p>
     <p class="yd-bio">
-      I am a Vision AI Researcher at K3I (Vision AI Lab), where I research and develop vision models for AI transformation (AX) applications, working
-      across data, model design, evaluation, and deployment.
+      K3I Vision AI Lab에서 Vision AI 연구원으로 재직하며, AI 전환(AX) 애플리케이션을 위한 비전 모델을 데이터, 모델 설계, 평가, 배포 전반에 걸쳐
+      연구·개발하고 있습니다.
     </p>
     <p class="yd-bio">
-      I received my M.S. in IT Convergence Engineering from
-      <a href="https://wens.kumoh.ac.kr/home" target="_blank" rel="noopener noreferrer">Kumoh National Institute of Technology</a> (WENS Lab, 2026),
-      advised by Prof.
-      <a href="https://scholar.google.com/citations?user=c8JDiHYAAAAJ" target="_blank" rel="noopener noreferrer">Soo Young Shin</a>. My thesis brought
-      semantic context into ROS2 navigation through an event-driven LLM router that combines visual detections, LiDAR, and localization signals to
-      select driving policies in crowded environments. I earned my B.S. in Electrical Engineering from Korea National University of Transportation
-      (2024).
+      <a href="https://wens.kumoh.ac.kr/home" target="_blank" rel="noopener noreferrer">금오공과대학교</a> IT융복합공학 석사(WENS 연구실, 2026)를
+      <a href="https://scholar.google.com/citations?user=c8JDiHYAAAAJ" target="_blank" rel="noopener noreferrer">신수용</a> 교수님 지도로 마쳤습니다.
+      학위 논문에서는 YOLO 검출, LiDAR, 위치추정 신호를 결합해 혼잡한 환경에서 주행 정책을 선택하는 이벤트 기반 LLM 라우터로 ROS2 내비게이션에
+      의미 기반 상황 판단을 도입했습니다. 한국교통대학교 전기공학 학사(2024)를 졸업했습니다.
     </p>
     <p class="yd-bio">
-      My research interests center on robot vision and embodied AI—visual SLAM, 3D Gaussian Splatting, and autonomous navigation—where perception
-      models have to work reliably inside a real system.
+      연구 관심사는 로봇 비전과 Embodied AI — Visual SLAM, 3D Gaussian Splatting, 자율주행 — 이며, 인지 모델이 실제 시스템 안에서 안정적으로
+      동작하도록 만드는 데 집중합니다.
     </p>
     <div class="yd-links">
       <a href="mailto:ingon4359@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
@@ -54,61 +52,61 @@ latest_posts:
 </div>
 
 <div class="yd-news">
-  <h3>Recent News</h3>
+  <h3>최근 소식</h3>
   <ul>
-    <li><span>Jun 2026</span> "Hybrid LLM Navigation System for Edge-Cloud Reasoning" was published in JKICS (vol. 51, no. 6).</li>
-    <li><span>Mar 2026</span> Joined K3I as a Vision AI Researcher (Vision AI Lab).</li>
-    <li><span>Feb 2026</span> Completed my M.S. in IT Convergence Engineering at Kumoh National Institute of Technology (WENS Lab).</li>
-    <li><span>Dec 2025</span> "A MobileViT-Based Detection System for Motorcycle Traffic Violations" was published in JKICS (vol. 50, no. 12).</li>
-    <li><span>May 2024</span> Won 3rd place (Surveillance and Reconnaissance, civilian division) at the 2nd ROK Second Operations Command Dronebot Combat Competition.</li>
+    <li><span>2026.06</span> "Hybrid LLM Navigation System for Edge-Cloud Reasoning" 논문이 JKICS(51권 6호)에 게재되었습니다.</li>
+    <li><span>2026.03</span> K3I Vision AI Lab에 Vision AI 연구원으로 입사했습니다.</li>
+    <li><span>2026.02</span> 금오공과대학교 IT융복합공학 석사과정을 졸업했습니다(WENS 연구실).</li>
+    <li><span>2025.12</span> "A MobileViT-Based Detection System for Motorcycle Traffic Violations" 논문이 JKICS(50권 12호)에 게재되었습니다.</li>
+    <li><span>2024.05</span> 제2회 대한민국 제2작전사령관배 드론봇 전투경연대회에서 감시정찰 민간부 3위를 수상했습니다.</li>
   </ul>
 </div>
 
-## Research
+## 연구 분야
 
 <div class="yd-grid">
   <div class="yd-card">
-    <h4><i class="fa-solid fa-robot"></i> Robot Vision &amp; Navigation</h4>
-    <p>ROS2, Nav2, SLAM, LiDAR-camera integration, autonomous navigation</p>
+    <h4><i class="fa-solid fa-robot"></i> 로봇 비전 &amp; 내비게이션</h4>
+    <p>ROS2, Nav2, SLAM, LiDAR-카메라 통합, 자율주행</p>
   </div>
   <div class="yd-card">
     <h4><i class="fa-solid fa-eye"></i> Vision AI</h4>
-    <p>Object detection, segmentation, Vision Transformers, temporal visual reasoning</p>
+    <p>객체 검출, 세그멘테이션, Vision Transformer, 시계열 시각 추론</p>
   </div>
   <div class="yd-card">
     <h4><i class="fa-solid fa-comments"></i> Embodied &amp; Language AI</h4>
-    <p>Vision-language models, LLM routing, natural-language robot control</p>
+    <p>비전-언어 모델(VLM), LLM 라우팅, 자연어 로봇 제어</p>
   </div>
   <div class="yd-card">
-    <h4><i class="fa-solid fa-microchip"></i> Edge Deployment</h4>
-    <p>Jetson Orin NX, Docker, CUDA, real-time perception pipelines</p>
+    <h4><i class="fa-solid fa-microchip"></i> 엣지 배포</h4>
+    <p>Jetson Orin NX, Docker, CUDA, 실시간 인지 파이프라인</p>
   </div>
 </div>
 
-## Selected work
+## 대표 프로젝트
 
 <div class="yd-projects">
   <a class="yd-project" href="/projects/hybrid-llm-navigation/">
-    <img src="/assets/img/projects/hybrid-llm-navigation.png" alt="Hybrid LLM Navigation System" />
+    <img src="/assets/img/projects/hybrid-llm-navigation.png" alt="Hybrid LLM 내비게이션 시스템" />
     <div class="yd-project-body">
-      <h4>Hybrid LLM Navigation System</h4>
-      <p>Context-aware policy selection for ROS2 navigation in crowded environments.</p>
+      <h4>Hybrid LLM 내비게이션 시스템</h4>
+      <p>혼잡 환경에서 상황을 인지해 주행 정책을 선택하는 ROS2 내비게이션.</p>
       <div class="yd-badges"><span>ROS2</span><span>Nav2</span><span>LLM</span></div>
     </div>
   </a>
   <a class="yd-project" href="/projects/mobilevit-traffic-violation/">
-    <img src="/assets/img/projects/mobilevit-traffic-violation.jpg" alt="MobileViT Motorcycle Traffic-Violation Detection" />
+    <img src="/assets/img/projects/mobilevit-traffic-violation.jpg" alt="MobileViT 이륜차 교통 위반 탐지" />
     <div class="yd-project-body">
-      <h4>MobileViT Violation Detection</h4>
-      <p>Temporal traffic-event detection deployed on Jetson Orin NX.</p>
+      <h4>MobileViT 교통 위반 탐지</h4>
+      <p>Jetson Orin NX에 배포한 시계열 교통 이벤트 탐지.</p>
       <div class="yd-badges"><span>MobileViT</span><span>YOLO</span><span>Jetson</span></div>
     </div>
   </a>
   <a class="yd-project" href="/projects/ros2-ugv/">
-    <img src="/assets/img/projects/ros2-ugv.jpg" alt="ROS2 UGV Platform Integration" />
+    <img src="/assets/img/projects/ros2-ugv.jpg" alt="ROS2 UGV 플랫폼 통합" />
     <div class="yd-project-body">
-      <h4>ROS2 UGV Platform</h4>
-      <p>Sensors, CAN communication, SLAM, and navigation for a UGV.</p>
+      <h4>ROS2 UGV 플랫폼</h4>
+      <p>무인지상차량의 센서·CAN 통신·SLAM·내비게이션 통합.</p>
       <div class="yd-badges"><span>ROS2</span><span>SLAM</span><span>LiDAR</span></div>
     </div>
   </a>
