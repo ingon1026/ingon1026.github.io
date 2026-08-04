@@ -1,6 +1,6 @@
 cv:
   name: Kim In Gon
-  label: Vision AI Engineer / Robot Vision Research Engineer
+  label: Vision AI Researcher
   email: ingon4359@gmail.com
   location: Republic of Korea
   image: ""
@@ -40,6 +40,23 @@ cv:
         start_date: 2018-03
         end_date: 2024-02
 
+    Publications:
+      - name: Journal Articles
+        highlights:
+          - Kim, I. G. and Shin, S. Y., "Hybrid LLM Navigation System for Edge-Cloud Reasoning," JKICS, vol. 51, no. 6, pp. 1175–1186, 2026.
+          - Kim, I. G. and Shin, S. Y., "A MobileViT-Based Detection System for Motorcycle Traffic Violations," JKICS, vol. 50, no. 12, pp. 1822–1829, 2025.
+
+      - name: Conference Papers
+        highlights:
+          - 스마트팜 환경을 위한 LLM 기반 딸기 품질 자동 판별 시스템, JCCI, 2025.
+          - 자연어 기반 자율이동을 위한 Dual-LLM 접근법, 한국통신학회 인공지능 학술대회, 2025.
+          - 소량의 필적 샘플을 활용한 Vision Transformer 기반 메타러닝 작성자 식별 기법, 한국통신학회 하계종합학술발표회, 2025.
+          - 군중 밀집 공간에서의 아동 분리 방지를 위한 VLM 기반 AI 모니터링 시스템, 한국통신학회, 2025.
+          - 대형 언어 모델을 활용한 자연어 기반 로봇 제어, 한국통신학회, 2024.
+          - 컴퓨터 비전과 딥러닝을 활용한 이륜차 신호위반 탐지 연구, 한국통신학회 인공지능 학술대회, 2024.
+          - 초분광카메라를 이용한 UAV 및 UGV 기반 지능형 농업 시스템, 한국통신학회, 2024.
+          - MR 글라스 기반 다중 카메라 스트리밍 시스템, 한국통신학회, 2024.
+
     Projects:
       - name: Hybrid LLM Navigation System
         summary: Event-driven semantic reasoning and policy selection for ROS2 navigation in crowded environments.
@@ -70,6 +87,8 @@ cv:
           - Vision Transformer-based meta-learning for writer identification from few handwriting samples
           - Hyperspectral camera-based intelligent agriculture using unmanned aerial and ground vehicles
           - Deep-learning UAV swarm and acoustic deterrence for airport bird and wildlife management (10-2025-0008806)
+          - Blockchain-based UAV logistics data management system (10-2024-0164746)
+          - Guide system for visually impaired runners (10-2024-0047611)
 
     Awards:
       - title: 3rd Place, Surveillance and Reconnaissance—Civilian Division
@@ -84,4 +103,4 @@ cv:
       - name: Systems
         keywords: "Python, C++, Docker, Linux, CUDA, Jetson Orin NX"
       - name: Research interests
-        keywords: "Robot Vision, Visual SLAM, 3D Gaussian Splatting, Embodied AI, edge AI"
+        keywords: "Vision AI, Robot Vision, SLAM, navigation, autonomous driving"
