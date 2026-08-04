@@ -49,38 +49,33 @@ latest_posts:
       <a href="https://velog.io/@ingon1026" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-pen-nib"></i> Blog</a>
       <a href="/cv/"><i class="fa-solid fa-file"></i> CV</a>
     </div>
+    <div class="yd-news">
+      <h3>Recent News</h3>
+      <ul>
+        <li><span>Jun 2026</span> "Hybrid LLM Navigation System for Edge-Cloud Reasoning" was published in JKICS (vol. 51, no. 6).</li>
+        <li><span>Mar 2026</span> Joined K3I as a Vision AI Researcher (Vision AI Lab).</li>
+        <li><span>Feb 2026</span> Completed my M.S. in IT Convergence Engineering at Kumoh National Institute of Technology (WENS Lab).</li>
+        <li><span>Dec 2025</span> "A MobileViT-Based Detection System for Motorcycle Traffic Violations" was published in JKICS (vol. 50, no. 12).</li>
+        <li><span>May 2024</span> Won 3rd place (Surveillance and Reconnaissance, civilian division) at the 2nd ROK Second Operations Command Dronebot Combat Competition.</li>
+      </ul>
+    </div>
   </div>
-</div>
-
-<div class="yd-news">
-  <h3>Recent News</h3>
-  <ul>
-    <li><span>Jun 2026</span> "Hybrid LLM Navigation System for Edge-Cloud Reasoning" was published in JKICS (vol. 51, no. 6).</li>
-    <li><span>Mar 2026</span> Joined K3I as a Vision AI Researcher (Vision AI Lab).</li>
-    <li><span>Feb 2026</span> Completed my M.S. in IT Convergence Engineering at Kumoh National Institute of Technology (WENS Lab).</li>
-    <li><span>Dec 2025</span> "A MobileViT-Based Detection System for Motorcycle Traffic Violations" was published in JKICS (vol. 50, no. 12).</li>
-    <li><span>May 2024</span> Won 3rd place (Surveillance and Reconnaissance, civilian division) at the 2nd ROK Second Operations Command Dronebot Combat Competition.</li>
-  </ul>
 </div>
 
 ## Research
 
-<div class="yd-grid">
-  <div class="yd-card">
-    <h4><i class="fa-solid fa-robot"></i> Robot Vision &amp; Navigation</h4>
-    <p>ROS2, Nav2, SLAM, LiDAR-camera integration, autonomous navigation</p>
-  </div>
-  <div class="yd-card">
-    <h4><i class="fa-solid fa-eye"></i> Vision AI</h4>
-    <p>Object detection, segmentation, Vision Transformers, temporal visual reasoning</p>
-  </div>
-  <div class="yd-card">
-    <h4><i class="fa-solid fa-comments"></i> Embodied &amp; Language AI</h4>
-    <p>Vision-language models, LLM routing, natural-language robot control</p>
-  </div>
-  <div class="yd-card">
-    <h4><i class="fa-solid fa-microchip"></i> Edge Deployment</h4>
-    <p>Jetson Orin NX, Docker, CUDA, real-time perception pipelines</p>
+<div class="yd-umbrella">
+  <h3 class="yd-umbrella-title">Vision AI</h3>
+  <div class="yd-venn">
+    <div class="yd-circle yd-circle-left">
+      <h4><i class="fa-solid fa-robot"></i> Robot Vision &amp; Navigation</h4>
+      <p>ROS2 · Nav2 · SLAM · Autonomous driving</p>
+    </div>
+    <div class="yd-circle yd-circle-right">
+      <h4><i class="fa-solid fa-comments"></i> VLM &amp; LLM Routing</h4>
+      <p>VLM · LLM · Natural-language robot control</p>
+    </div>
+    <div class="yd-venn-center">VLA</div>
   </div>
 </div>
 
@@ -208,13 +203,13 @@ latest_posts:
     border-color: var(--global-theme-color, #0056b3);
   }
 
-  /* recent news card */
+  /* recent news card (inside the hero text column) */
   .yd-news {
     background: var(--global-card-bg-color, #fff);
     border: 1px solid var(--global-divider-color, #e0e0e0);
     border-radius: 0.75rem;
     padding: 1rem 1.25rem;
-    margin: 0 0 2rem;
+    margin: 1.2rem 0 0;
   }
 
   .yd-news h3 {
@@ -243,35 +238,76 @@ latest_posts:
     min-width: 5.2rem;
   }
 
-  /* research interest cards */
-  .yd-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.9rem;
+  /* Vision AI umbrella + VLA venn diagram */
+  .yd-umbrella {
+    border: 1px solid var(--global-divider-color, #e0e0e0);
+    border-radius: 0.75rem;
+    padding: 1.2rem 1.4rem 1.6rem;
     margin: 1rem 0 1.5rem;
   }
 
-  .yd-card {
-    border: 1px solid var(--global-divider-color, #e0e0e0);
-    border-radius: 0.75rem;
-    padding: 0.95rem 1.1rem;
-  }
-
-  .yd-card h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0 0 0.35rem;
-  }
-
-  .yd-card h4 i {
+  .yd-umbrella-title {
+    font-size: 1.05rem;
+    font-weight: 700;
     color: var(--global-theme-color, #0056b3);
-    margin-right: 0.4rem;
+    margin: 0 0 1rem;
   }
 
-  .yd-card p {
-    font-size: 0.9rem;
+  .yd-venn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .yd-circle {
+    width: 17rem;
+    height: 17rem;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.2rem;
+    background: rgba(0, 86, 179, 0.06);
+    border: 1.5px solid rgba(0, 86, 179, 0.35);
+  }
+
+  .yd-circle-left {
+    margin-right: -3rem;
+    padding-right: 3.6rem;
+  }
+
+  .yd-circle-right {
+    margin-left: -3rem;
+    padding-left: 3.6rem;
+  }
+
+  .yd-circle h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+  }
+
+  .yd-circle h4 i {
+    color: var(--global-theme-color, #0056b3);
+    margin-right: 0.35rem;
+  }
+
+  .yd-circle p {
+    font-size: 0.85rem;
     color: var(--global-text-color-light, #828282);
     margin: 0;
+  }
+
+  .yd-venn-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--global-theme-color, #0056b3);
   }
 
   /* project cards */
@@ -357,9 +393,23 @@ latest_posts:
       justify-content: center;
     }
 
-    .yd-grid,
     .yd-projects {
       grid-template-columns: 1fr;
+    }
+
+    .yd-venn {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .yd-circle-left {
+      margin: 0 0 -2.5rem;
+      padding: 1.2rem 1.2rem 3.4rem;
+    }
+
+    .yd-circle-right {
+      margin: 0;
+      padding: 3.4rem 1.2rem 1.2rem;
     }
   }
 </style>
