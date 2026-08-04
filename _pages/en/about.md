@@ -30,17 +30,15 @@ latest_posts:
       where I research and develop vision models used in the company's XR and Physical AI products.
     </p>
     <p class="yd-bio">
-      I received my M.S. in IT Convergence Engineering from
-      <a href="https://wens.kumoh.ac.kr/home" target="_blank" rel="noopener noreferrer">Kumoh National Institute of Technology</a> (WENS Lab, 2026),
-      advised by Prof.
-      <a href="https://scholar.google.com/citations?user=c8JDiHYAAAAJ" target="_blank" rel="noopener noreferrer">Soo Young Shin</a>. My thesis brought
-      semantic context into ROS2 navigation through an event-driven LLM router that combines visual detections, LiDAR, and localization signals to
-      select driving policies in crowded environments. I earned my B.S. in Electrical Engineering from Korea National University of Transportation
-      (2024).
+      I received my M.S. in IT Convergence Engineering from Kumoh National Institute of Technology
+      (<a href="https://wens.kumoh.ac.kr/home" target="_blank" rel="noopener noreferrer">WENS Lab</a>, 2026), advised by Prof.
+      <a href="https://scholar.google.com/citations?user=c8JDiHYAAAAJ" target="_blank" rel="noopener noreferrer">Soo Young Shin</a>. My master's
+      research centered on LLM-based navigation, visual recognition, and edge AI. I earned my B.S. in Electrical Engineering from Korea National
+      University of Transportation (2024).
     </p>
     <p class="yd-bio">
-      My research interests center on robot vision and embodied AI—visual SLAM, 3D Gaussian Splatting, and autonomous navigation—where perception
-      models have to work reliably inside a real system.
+      My research interests lie in Vision AI — particularly robot vision, SLAM, navigation, and autonomous driving — with a focus on making
+      perception models work reliably inside real systems.
     </p>
     <div class="yd-links">
       <a href="mailto:ingon4359@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>

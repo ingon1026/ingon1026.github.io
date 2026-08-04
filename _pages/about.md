@@ -30,14 +30,14 @@ latest_posts:
       회사의 XR·Physical AI 제품에 쓰이는 비전 모델을 연구·개발하고 있습니다.
     </p>
     <p class="yd-bio">
-      <a href="https://wens.kumoh.ac.kr/home" target="_blank" rel="noopener noreferrer">금오공과대학교</a> IT융복합공학 석사(WENS 연구실, 2026)를
-      <a href="https://scholar.google.com/citations?user=c8JDiHYAAAAJ" target="_blank" rel="noopener noreferrer">신수용</a> 교수님 지도로 마쳤습니다.
-      학위 논문에서는 YOLO 검출, LiDAR, 위치추정 신호를 결합해 혼잡한 환경에서 주행 정책을 선택하는 이벤트 기반 LLM 라우터로 ROS2 내비게이션에
-      의미 기반 상황 판단을 도입했습니다. 한국교통대학교 전기공학 학사(2024)를 졸업했습니다.
+      금오공과대학교 IT융복합공학 석사 학위(<a href="https://wens.kumoh.ac.kr/home" target="_blank" rel="noopener noreferrer">WENS 연구실</a>,
+      2026)를 <a href="https://scholar.google.com/citations?user=c8JDiHYAAAAJ" target="_blank" rel="noopener noreferrer">신수용</a> 교수님 지도로
+      취득했습니다. 석사 연구는 LLM 기반 내비게이션 · 비전 인식 · 엣지 AI를 중심으로 진행했습니다. 한국교통대학교 전기공학 학사(2024)를
+      졸업했습니다.
     </p>
     <p class="yd-bio">
-      연구 관심사는 로봇 비전과 Embodied AI — Visual SLAM, 3D Gaussian Splatting, 자율주행 — 이며, 인지 모델이 실제 시스템 안에서 안정적으로
-      동작하도록 만드는 데 집중합니다.
+      연구 관심사는 Vision AI, 그중에서도 로봇 비전·SLAM·내비게이션·자율주행이며, 인지 모델이 실제 시스템 안에서 안정적으로 동작하도록 만드는 데
+      집중합니다.
     </p>
     <div class="yd-links">
       <a href="mailto:ingon4359@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
