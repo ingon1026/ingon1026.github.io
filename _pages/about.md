@@ -5,8 +5,8 @@ permalink: /
 subtitle: Vision AI Researcher · Robot Vision · ROS2 · Embodied AI
 lang: ko
 
-selected_papers: true
-social: true
+selected_papers: false
+social: false
 
 announcements:
   enabled: false
@@ -78,35 +78,6 @@ latest_posts:
   </div>
 </div>
 
-## 대표 프로젝트
-
-<div class="yd-projects">
-  <a class="yd-project" href="/projects/hybrid-llm-navigation/">
-    <img src="/assets/img/projects/hybrid-llm-navigation.png" alt="Hybrid LLM 내비게이션 시스템" />
-    <div class="yd-project-body">
-      <h4>Hybrid LLM 내비게이션 시스템</h4>
-      <p>혼잡 환경에서 상황을 인지해 주행 정책을 선택하는 ROS2 내비게이션.</p>
-      <div class="yd-badges"><span>ROS2</span><span>Nav2</span><span>LLM</span></div>
-    </div>
-  </a>
-  <a class="yd-project" href="/projects/mobilevit-traffic-violation/">
-    <img src="/assets/img/projects/mobilevit-traffic-violation.jpg" alt="MobileViT 이륜차 교통 위반 탐지" />
-    <div class="yd-project-body">
-      <h4>MobileViT 교통 위반 탐지</h4>
-      <p>Jetson Orin NX에 배포한 시계열 교통 이벤트 탐지.</p>
-      <div class="yd-badges"><span>MobileViT</span><span>YOLO</span><span>Jetson</span></div>
-    </div>
-  </a>
-  <a class="yd-project" href="/projects/ros2-ugv/">
-    <img src="/assets/img/projects/ros2-ugv.jpg" alt="ROS2 UGV 플랫폼 통합" />
-    <div class="yd-project-body">
-      <h4>ROS2 UGV 플랫폼</h4>
-      <p>무인지상차량의 센서·CAN 통신·SLAM·내비게이션 통합.</p>
-      <div class="yd-badges"><span>ROS2</span><span>SLAM</span><span>LiDAR</span></div>
-    </div>
-  </a>
-</div>
-
 <style>
   /* ---- yaodu-style home, scoped to this page ---- */
   body {
@@ -128,7 +99,7 @@ latest_posts:
   /* hero */
   .yd-hero {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 2.4rem;
     margin: 1.2rem 0 1.8rem;
   }
@@ -309,70 +280,6 @@ latest_posts:
     color: var(--global-theme-color, #0056b3);
   }
 
-  /* project cards */
-  .yd-projects {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.9rem;
-    margin: 1rem 0 1.5rem;
-  }
-
-  .yd-project {
-    display: block;
-    border: 1px solid var(--global-divider-color, #e0e0e0);
-    border-radius: 0.75rem;
-    overflow: hidden;
-    color: var(--global-text-color, #333);
-    text-decoration: none !important;
-    transition:
-      transform 0.15s ease,
-      box-shadow 0.15s ease;
-  }
-
-  .yd-project:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-    color: var(--global-text-color, #333);
-  }
-
-  .yd-project img {
-    width: 100%;
-    height: 8.5rem;
-    object-fit: cover;
-    display: block;
-    background: var(--global-card-bg-color, #fff);
-  }
-
-  .yd-project-body {
-    padding: 0.8rem 0.95rem 0.95rem;
-  }
-
-  .yd-project h4 {
-    font-size: 0.98rem;
-    font-weight: 600;
-    margin: 0 0 0.3rem;
-  }
-
-  .yd-project p {
-    font-size: 0.85rem;
-    color: var(--global-text-color-light, #828282);
-    margin: 0 0 0.55rem;
-  }
-
-  .yd-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-  }
-
-  .yd-badges span {
-    border: 1px solid var(--global-divider-color, #e0e0e0);
-    border-radius: 9999px;
-    padding: 0.1rem 0.6rem;
-    font-size: 0.72rem;
-    font-weight: 600;
-  }
-
   /* responsive */
   @media (max-width: 768px) {
     .yd-hero {
@@ -390,10 +297,6 @@ latest_posts:
 
     .yd-links {
       justify-content: center;
-    }
-
-    .yd-projects {
-      grid-template-columns: 1fr;
     }
 
     .yd-venn {
