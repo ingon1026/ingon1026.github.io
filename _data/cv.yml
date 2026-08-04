@@ -104,15 +104,12 @@ cv:
         summary: Detection and removal of camera noise and environmental artifacts during drone operation, using OpenCV detection and deep-learning denoising.
 
     Patents:
-      - name: Korean patent applications (KIPO)
-        summary: Nine filed applications spanning robot navigation, UAV/UGV systems, and applied deep learning.
-        highlights:
-          - Hybrid LLM navigation system performing semantics-based safety assessment
-          - Vision Transformer-based meta-learning for writer identification from few handwriting samples
-          - Hyperspectral camera-based intelligent agriculture using unmanned aerial and ground vehicles
-          - Deep-learning UAV swarm and acoustic deterrence for airport bird and wildlife management (10-2025-0008806)
-          - Blockchain-based UAV logistics data management system (10-2024-0164746)
-          - Guide system for visually impaired runners (10-2024-0047611)
+      - bullet: "Nine patent applications filed with the Korean Intellectual Property Office (KIPO) in robot navigation, UAV/UGV systems, and applied deep learning. Selected:"
+      - bullet: Hybrid LLM navigation system performing semantics-based safety assessment
+      - bullet: Vision Transformer-based meta-learning for writer identification from few handwriting samples
+      - bullet: Deep-learning UAV swarm and acoustic deterrence for airport bird and wildlife management (KR 10-2025-0008806)
+      - bullet: Blockchain-based UAV logistics data management system (KR 10-2024-0164746)
+      - bullet: Guide system for visually impaired runners (KR 10-2024-0047611)
 
     Awards:
       - title: 3rd Place, Surveillance and Reconnaissance—Civilian Division
