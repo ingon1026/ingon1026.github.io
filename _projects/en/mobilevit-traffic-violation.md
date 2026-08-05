@@ -17,12 +17,20 @@ Single-frame detectors miss violations that depend on **temporal context** — s
 
 ## System
 
+![System overview](/assets/img/projects/figs/mobilevit-system.png)
+
+_System overview — motorcycle dashcam footage flows through YOLO detection and MobileViT temporal analysis on the Jetson board, ending in violation scoring and logging._
+
 - YOLO detects road elements (vehicles, traffic lights, stop lines, crosswalks) and motorcycles.
 - ROI sequences of detected objects feed a MobileViT time-series analysis of position and state changes across frames — e.g., whether the stop line is crossed on red, or a crosswalk stays occupied over time.
 - When the violation probability exceeds a confidence threshold, the event is logged immediately in JSON and CSV for downstream use.
 - Runs in real time on a Jetson Orin NX (RealSense D435i, Ubuntu 22.04 + JetPack 6) with ROS2 Humble.
 
 ## Validation
+
+![Detection example on real footage](/assets/img/projects/figs/mobilevit-detection.jpg)
+
+_Detection on real driving footage — traffic lights and crosswalks are detected while per-type violation counts are logged in real time._
 
 Evaluated on **75 minutes of real dashcam footage** (30 min urban + 45 min rural, day and night), achieving **over 90% accuracy** across conditions. MobileViT's temporal analysis compensated for missed detections and filtered transient events to reduce false positives.
 

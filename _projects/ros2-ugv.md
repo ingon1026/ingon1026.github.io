@@ -13,15 +13,21 @@ permalink: /projects/ros2-ugv/
 
 ## 범위
 
-연구실의 multi-UXV 팀 프로젝트에서 무인지상차량(UGV) 셋업과 자율주행 파이프라인 구축을 담당했습니다.
+연구실의 **multi-UXV(무인이동체) 팀 프로젝트**에서 UGV(무인 지상 차량) 파트를 담당해, 플랫폼 셋업부터 자율주행 파이프라인 구축까지 수행했습니다. UGV는 드론 군집과 연계되는 이동식 충전 스테이션 역할도 겸하는 구성입니다.
+
+![multi-UXV 시스템 개요](/assets/img/projects/figs/ugv-multi-uxv.png)
+
+_multi-UXV 시스템 개요 — 드론 군집(3D LiDAR·RGB-D)과 지상의 UGV 이동식 충전 스테이션이 연계되는 구조. 이 중 UGV 플랫폼 구축을 담당했습니다._
 
 ## 기여
 
-- UGV 플랫폼과 ROS 환경을 셋업했습니다.
+- ROS2 환경에서 UGV 플랫폼 초기 셋업과 주행 환경 구성을 수행했습니다.
 - CAN 통신, 로봇 SDK, Ouster LiDAR, Intel RealSense D435i 카메라, IMU 센싱을 통합했습니다.
-- SLAM과 내비게이션 워크플로를 구성했습니다.
-- 플랫폼 재현과 유지보수가 쉽도록 셋업·통합 가이드를 작성했습니다.
+- Docker 컨테이너 기반으로 센서 드라이버·주행 환경을 구성해 재현 가능한 셋업을 만들었습니다.
+- SLAM과 내비게이션 워크플로를 구성하고, 팀원이 따라할 수 있는 셋업·통합 가이드를 문서화했습니다.
 
-`ROS2` · `ROS1` · `SLAM` · `LiDAR` · `RealSense D435i` · `CAN` · `Python` · `C++`
+![SLAM 매핑 화면](/assets/img/projects/figs/ugv-slam-rviz.png)
 
-**TODO:** 팀·연구실 공개 허가 검토 후 아키텍처 다이어그램, 영상, 저장소 링크 추가 예정.
+_RViz에서 확인한 LiDAR 포인트클라우드 기반 SLAM 매핑 — 맵·포인트클라우드·오도메트리를 실시간 시각화합니다._
+
+`ROS2` · `ROS1` · `SLAM` · `Ouster LiDAR` · `RealSense D435i` · `CAN` · `Docker` · `Python` · `C++`

@@ -17,11 +17,19 @@ Standard Nav2 treats humans and boxes as identical geometric obstacles, so it re
 
 ## System
 
+![Hybrid LLM navigation system architecture](/assets/img/projects/figs/hybrid-architecture.png)
+
+_Overall architecture — natural-language commands and multimodal sensor input pass through edge-LLM (Gemma 3) semantic matching, and the LLM router selects Edge or Cloud via the τ score to generate driving policies._
+
 **Natural-language command interpretation** — everyday commands such as "Go to zone D" or "Move to the back door" are processed in four steps: expression normalization → key-term extraction → semantic similarity against predefined Resource–Zone definitions → goal-coordinate selection. Ambiguous candidates trigger clarification ("Which door would you like to move to?"), and a 0–1 matching score decides execution, confirmation, or rejection.
 
 **Vision–LLM fusion** — a YOLOv11n detector recognizes person, shelf, box, and door. From 11 minutes of real camera footage plus 3 minutes of Gazebo frames, 3,702 original images were augmented to 14,808 training samples (7:2:1 split, 100 epochs), reaching **96% mAP@0.5** on the test set. Detections are summarized into short texts such as "1 person at 1.2 m ahead" for the router.
 
 **Hybrid LLM router** — LiDAR- and vision-based safety states (HPSS: minimum human distance, free-space ratio) generate events on escalation (Safe → Caution), and the router computes an environment score **τ = wₛS + w꜀C − wₗL** (safety margin S, scene complexity C, cost/latency L). Following an **edge-first policy**, a lightweight Gemma-3 (QAT, via Ollama) handles most scenes, and the Cloud model (GPT-3.5-turbo) is invoked only when the score crosses a threshold in scenes that require semantic judgment. The selected model outputs two policy parameters, `speed_gain` and `min_person_dist`, applied through Nav2.
+
+![LLM router structure](/assets/img/projects/figs/hybrid-router.png)
+
+_LLM router — computes the environment score τ from the resolved goal and events, then selects the Local or Cloud model._
 
 Platform: TurtleBot3 Burger (LDS LiDAR + USB webcam), ROS2 + Gazebo warehouse environment.
 
@@ -35,6 +43,10 @@ With crowd levels N=1–8 (three goals × three runs = 9 trials per level), Conv
 | 4   | 7/9         | 9/9          | 28.7 s                 | 25.0 s                  | 4             |
 | 6   | 5/9         | 8/9          | 42.1 s                 | 34.5 s                  | 6             |
 | 8   | 2/9         | 6/9          | 59.7 s                 | 47.2 s                  | 8             |
+
+![Success rate vs crowd level](/assets/img/projects/figs/hybrid-success-rate.png)
+
+_Goal-arrival success rate by crowd level — Nav2 collapses while Hybrid degrades gracefully._
 
 Hybrid also maintained larger minimum human distances (0.69–0.75 m) across all crowd levels while keeping Cloud invocations to a handful per task — combining edge responsiveness with cloud-level reasoning without continuous cloud inference.
 

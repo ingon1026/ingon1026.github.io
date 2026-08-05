@@ -11,15 +11,23 @@ permalink: /en/projects/strawberry-quality/
 
 [한국어](/projects/strawberry-quality/)
 
+## Problem
+
+Conventional quality assessment stops at simple image classification or binary decisions, offering no **detailed interpretation** such as harvest criteria or disease-guidance references. Fixed classifiers also adapt poorly when criteria change across cultivars and environments.
+
 ## Approach
 
-- Segmented individual strawberries with YOLOv11-seg.
-- Used OpenCV to quantify ripeness, size, and potential disease indicators.
-- Connected measurements to quality and disease-guidance documents through a retrieval-augmented generation pipeline.
-- Generated a natural-language assessment of harvest readiness and recommended actions with an LLM.
+![System architecture](/assets/img/projects/figs/strawberry-system.png)
 
-The goal was to move beyond a fixed binary classifier and provide document-grounded interpretations that can adapt to different quality criteria.
+_Pipeline — YOLOv11-seg segmentation → OpenCV quantitative analysis → RAG document retrieval → LLM interpretation and report generation._
+
+- Segmented individual strawberries with YOLOv11-seg to isolate analysis targets.
+- Quantified **ripeness (color), size, and potential disease indicators** with OpenCV.
+- Converted measurements into natural-language prompts and retrieved quality and disease-guidance documents through a RAG pipeline.
+- An LLM interprets the retrieved references to generate a natural-language report on **harvest readiness and recommended actions**.
+
+The goal was document-grounded interpretation that adapts by swapping reference documents — instead of retraining a fixed binary classifier.
 
 `YOLOv11-seg` · `OpenCV` · `RAG` · `LLM` · `PyTorch` · `Python`
 
-**Presentation:** 35th Joint Conference on Communications and Information. Author order, year, pages, and public paper link remain **TODO** until confirmed.
+**Presentation:** In Gon Kim and Soo Young Shin, "An LLM-Based Automated Strawberry Quality Assessment System for Smart Farming Environments," 35th Joint Conference on Communications and Information (JCCI 2025), 2025.
