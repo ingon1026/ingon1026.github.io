@@ -62,24 +62,6 @@ latest_posts:
   </div>
 </div>
 
-## Research
-
-<div class="yd-umbrella">
-  <h3 class="yd-umbrella-title">Vision AI</h3>
-  <div class="yd-axes">
-    <div class="yd-axis">
-      <h4><i class="fa-solid fa-robot"></i> Robot Vision &amp; Navigation</h4>
-      <p>ROS2 · Nav2 · SLAM · Autonomous driving</p>
-    </div>
-    <div class="yd-vla">VLA</div>
-    <div class="yd-axis">
-      <h4><i class="fa-solid fa-comments"></i> VLM &amp; LLM Routing</h4>
-      <p>VLM · LLM · Natural-language robot control</p>
-    </div>
-  </div>
-  <p class="yd-axes-note">Where the two axes meet — Vision-Language-Action (VLA)</p>
-</div>
-
 <style>
   /* ---- yaodu-style home, scoped to this page ---- */
   body {
@@ -210,80 +192,6 @@ latest_posts:
     min-width: 5.2rem;
   }
 
-  /* Vision AI umbrella + VLA venn diagram */
-  .yd-umbrella {
-    border: 1px solid var(--global-divider-color, #e0e0e0);
-    border-radius: 0.75rem;
-    padding: 1.2rem 1.4rem 1.6rem;
-    margin: 1rem 0 1.5rem;
-  }
-
-  .yd-umbrella-title {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--global-theme-color, #0056b3);
-    margin: 0 0 1rem;
-  }
-
-  .yd-axes {
-    display: flex;
-    align-items: stretch;
-  }
-
-  .yd-axis {
-    flex: 1;
-    border: 1px solid var(--global-divider-color, #e0e0e0);
-    border-radius: 0.75rem;
-    padding: 1.1rem 2rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .yd-axis h4 {
-    font-size: 0.98rem;
-    font-weight: 600;
-    margin: 0 0 0.35rem;
-  }
-
-  .yd-axis h4 i {
-    color: var(--global-theme-color, #0056b3);
-    margin-right: 0.35rem;
-  }
-
-  .yd-axis p {
-    font-size: 0.85rem;
-    color: var(--global-text-color-light, #828282);
-    margin: 0;
-  }
-
-  .yd-vla {
-    align-self: center;
-    flex-shrink: 0;
-    width: 3.4rem;
-    height: 3.4rem;
-    border-radius: 50%;
-    margin: 0 -1.7rem;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--global-theme-color, #0056b3);
-    color: #fff;
-    font-size: 0.88rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    box-shadow: 0 0 0 4px var(--global-bg-color, #fff);
-  }
-
-  .yd-axes-note {
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--global-text-color-light, #828282);
-    margin: 0.9rem 0 0;
-  }
-
   /* responsive */
   @media (max-width: 768px) {
     .yd-hero {
@@ -303,12 +211,5 @@ latest_posts:
       justify-content: center;
     }
 
-    .yd-axes {
-      flex-direction: column;
-    }
-
-    .yd-vla {
-      margin: -1.7rem 0;
-    }
   }
 </style>
