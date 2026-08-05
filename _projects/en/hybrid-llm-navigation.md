@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Hybrid LLM Navigation System
-description: Event-driven context reasoning and policy selection for ROS2 navigation.
+description: Natural-language ROS2 navigation with edge-cloud LLM routing for context reasoning.
 category: featured
 importance: 1
 lang: en
@@ -13,32 +13,33 @@ permalink: /en/projects/hybrid-llm-navigation/
 
 ## Problem
 
-Distance-based obstacle avoidance alone does not capture congestion, reduced safety margins, or ambiguous natural-language commands. This master's research, carried out at WENS Lab under Prof. [Soo Young Shin](https://scholar.google.com/citations?user=c8JDiHYAAAAJ), explored how semantic context can augment a conventional Nav2 pipeline.
+Standard Nav2 treats humans and boxes as identical geometric obstacles, so it refuses traversable passages and suffers unnecessary stops and deadlocks as scenes get crowded. This master's research adds semantic reasoning to natural-language navigation through a **hybrid decision architecture combining an Edge LLM and a Cloud LLM** (WENS Lab, advised by Prof. [Soo Young Shin](https://scholar.google.com/citations?user=c8JDiHYAAAAJ)).
 
-## Contribution
+## System
 
-- Designed an event-driven **LLM router** that combines YOLO detections, LiDAR observations, and AMCL localization signals.
-- Defined a thresholded score using safety distance, semantic class, and localization uncertainty to decide when LLM reasoning is needed.
-- Connected natural-language commands to ROS2 actions through `nav2_simple_commander`, including clarification for ambiguous commands.
-- Integrated the system in ROS2 Jazzy and Gazebo Harmonic for navigation, avoidance, and congestion scenarios.
+**Natural-language command interpretation** — everyday commands such as "Go to zone D" or "Move to the back door" are processed in four steps: expression normalization → key-term extraction → semantic similarity against predefined Resource–Zone definitions → goal-coordinate selection. Ambiguous candidates trigger clarification ("Which door would you like to move to?"), and a 0–1 matching score decides execution, confirmation, or rejection.
 
-## Evaluation
+**Vision–LLM fusion** — a YOLOv11n detector recognizes person, shelf, box, and door. From 11 minutes of real camera footage plus 3 minutes of Gazebo frames, 3,702 original images were augmented to 14,808 training samples (7:2:1 split, 100 epochs), reaching **96% mAP@0.5** on the test set. Detections are summarized into short texts such as "1 person at 1.2 m ahead" for the router.
 
-In the documented simulation with crowd sizes from one to eight people, the LLM-assisted system achieved an average goal-arrival success rate of **82%**, compared with **43%** for the Nav2 baseline. These are simulation results reported in the thesis portfolio and should not be interpreted as field-deployment metrics.
+**Hybrid LLM router** — LiDAR- and vision-based safety states (HPSS: minimum human distance, free-space ratio) generate events on escalation (Safe → Caution), and the router computes an environment score **τ = wₛS + w꜀C − wₗL** (safety margin S, scene complexity C, cost/latency L). Following an **edge-first policy**, a lightweight Gemma-3 (QAT, via Ollama) handles most scenes, and the Cloud model (GPT-3.5-turbo) is invoked only when the score crosses a threshold in scenes that require semantic judgment. The selected model outputs two policy parameters, `speed_gain` and `min_person_dist`, applied through Nav2.
 
-Per-crowd-level metrics (goal-arrival time, minimum safe distance, unnecessary stops):
+Platform: TurtleBot3 Burger (LDS LiDAR + USB webcam), ROS2 + Gazebo warehouse environment.
 
-| Crowd level | Nav2 T<sub>goal</sub> | Nav2 D<sub>min</sub> | Nav2 stops | LLM T<sub>goal</sub> | LLM D<sub>min</sub> | LLM stops |
-| ----------- | --------------------- | -------------------- | ---------- | -------------------- | ------------------- | --------- |
-| 1–2 people  | 111 s                 | 0.79 m               | 0.8        | 121 s                | 0.89 m              | 0.5       |
-| 3 people    | 116 s                 | 0.76 m               | 1.4        | 127 s                | 0.86 m              | 1.0       |
-| 4 people    | 121 s                 | 0.73 m               | 2.1        | 133 s                | 0.84 m              | 1.4       |
-| 5 people    | 126 s                 | 0.70 m               | 2.9        | 139 s                | 0.82 m              | 1.9       |
-| 6 people    | 130 s                 | 0.68 m               | 3.6        | 145 s                | 0.80 m              | 2.4       |
-| 7–8 people  | 140 s                 | 0.635 m              | 4.5        | 155 s                | 0.77 m              | 3.0       |
+## Results
 
-The LLM-assisted system maintained larger minimum safe distances and made fewer unnecessary stops across all crowd levels, at the cost of moderately longer goal-arrival times.
+With crowd levels N=1–8 (three goals × three runs = 9 trials per level), Conventional Nav2, Local-only (Edge), and Hybrid were compared. **Nav2 collapses from N=3** (3/9 at N=4, 1/9 at N=5), while Hybrid stays high:
 
-`ROS2` · `Nav2` · `YOLO` · `LiDAR` · `AMCL` · `LLM` · `Gazebo`
+| N   | Local succ. | Hybrid succ. | Local T<sub>goal</sub> | Hybrid T<sub>goal</sub> | Cloud calls/9 |
+| --- | ----------- | ------------ | ---------------------- | ----------------------- | ------------- |
+| 2   | 9/9         | 9/9          | 21.5 s                 | 20.4 s                  | 2             |
+| 4   | 7/9         | 9/9          | 28.7 s                 | 25.0 s                  | 4             |
+| 6   | 5/9         | 8/9          | 42.1 s                 | 34.5 s                  | 6             |
+| 8   | 2/9         | 6/9          | 59.7 s                 | 47.2 s                  | 8             |
+
+Hybrid also maintained larger minimum human distances (0.69–0.75 m) across all crowd levels while keeping Cloud invocations to a handful per task — combining edge responsiveness with cloud-level reasoning without continuous cloud inference.
+
+`ROS2` · `Nav2` · `YOLOv11` · `LiDAR` · `Ollama` · `Gemma 3` · `GPT-3.5` · `Gazebo`
 
 **Publication:** Kim, In Gon and Shin, Soo Young, "Hybrid LLM Navigation System for Edge-Cloud Reasoning," _The Journal of Korean Institute of Communications and Information Sciences_ (JKICS), vol. 51, no. 6, pp. 1175–1186, 2026.
+
+**Patent:** Mobile Robot Navigation System and Method Using Hybrid LLM Routing Based on Natural-Language Commands and Environment Scores (application no. 10-2025-0212453) — see [Patents](/en/patents/).

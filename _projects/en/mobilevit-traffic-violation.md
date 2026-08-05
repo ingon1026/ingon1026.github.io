@@ -1,7 +1,7 @@
 ---
 layout: page
 title: MobileViT Motorcycle Traffic-Violation Detection
-description: Temporal traffic-event recognition on an embedded ROS2 platform.
+description: Real-time temporal traffic-violation recognition on an embedded ROS2 platform.
 category: featured
 importance: 2
 lang: en
@@ -13,16 +13,21 @@ permalink: /en/projects/mobilevit-traffic-violation/
 
 ## Problem
 
-Single-frame detectors can miss traffic violations that depend on temporal context, such as signal changes or occupancy of a crosswalk. Momentary detection failures also produce avoidable false positives.
+Single-frame detectors miss violations that depend on **temporal context** — signal changes, sustained crosswalk occupancy — and momentary detection failures turn into false positives. This system defines and detects three violation types under the Road Traffic Act: **signal violation, centerline crossing, and crosswalk violation**, in real time.
 
-## Contribution
+## System
 
-- Used YOLO to detect traffic lights, lane boundaries, crosswalks, and vehicles.
-- Constructed temporal ROI sequences and analyzed state changes and motion patterns with MobileViT.
-- Integrated the inference pipeline with ROS2 and deployed it on a Jetson Orin NX for real-time operation.
+- YOLO detects road elements (vehicles, traffic lights, stop lines, crosswalks) and motorcycles.
+- ROI sequences of detected objects feed a MobileViT time-series analysis of position and state changes across frames — e.g., whether the stop line is crossed on red, or a crosswalk stays occupied over time.
+- When the violation probability exceeds a confidence threshold, the event is logged immediately in JSON and CSV for downstream use.
+- Runs in real time on a Jetson Orin NX (RealSense D435i, Ubuntu 22.04 + JetPack 6) with ROS2 Humble.
+
+## Validation
+
+Evaluated on **75 minutes of real dashcam footage** (30 min urban + 45 min rural, day and night), achieving **over 90% accuracy** across conditions. MobileViT's temporal analysis compensated for missed detections and filtered transient events to reduce false positives.
 
 This work was part of a motorcycle dashcam-based safe-driving evaluation system under the Gumi Innopolis development program.
 
-`MobileViT` · `YOLO` · `ROS2` · `Jetson Orin NX` · `PyTorch` · `Python`
+`MobileViT` · `YOLO` · `ROS2 Humble` · `Jetson Orin NX` · `RealSense D435i` · `PyTorch`
 
 **Publication:** Kim, In Gon and Shin, Soo Young, "A MobileViT-Based Detection System for Motorcycle Traffic Violations," _The Journal of Korean Institute of Communications and Information Sciences_ (JKICS), vol. 50, no. 12, pp. 1822–1829, 2025.
