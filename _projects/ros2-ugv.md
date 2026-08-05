@@ -31,3 +31,22 @@ _multi-UXV 시스템 개요 — 드론 군집(3D LiDAR·RGB-D)과 지상의 UGV 
 _RViz에서 확인한 LiDAR 포인트클라우드 기반 SLAM 매핑 — 맵·포인트클라우드·오도메트리를 실시간 시각화합니다._
 
 `ROS2` · `ROS1` · `SLAM` · `Ouster LiDAR` · `RealSense D435i` · `CAN` · `Docker` · `Python` · `C++`
+
+<style>
+  .post img {
+    display: block;
+    max-width: min(100%, 42rem);
+    height: auto;
+    margin: 0.6rem auto 0.2rem;
+    border: 1px solid var(--global-divider-color, #e0e0e0);
+    border-radius: 0.5rem;
+  }
+
+  .post p > em:only-child {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light, #828282);
+    margin-top: 0.1rem;
+  }
+</style>

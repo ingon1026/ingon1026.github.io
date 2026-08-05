@@ -39,3 +39,22 @@ _실제 주행 영상에서의 검출 예시 — 신호등·횡단보도 검출�
 `MobileViT` · `YOLO` · `ROS2 Humble` · `Jetson Orin NX` · `RealSense D435i` · `PyTorch`
 
 **논문:** Kim, In Gon and Shin, Soo Young, "A MobileViT-Based Detection System for Motorcycle Traffic Violations," _The Journal of Korean Institute of Communications and Information Sciences_ (JKICS), vol. 50, no. 12, pp. 1822–1829, 2025.
+
+<style>
+  .post img {
+    display: block;
+    max-width: min(100%, 42rem);
+    height: auto;
+    margin: 0.6rem auto 0.2rem;
+    border: 1px solid var(--global-divider-color, #e0e0e0);
+    border-radius: 0.5rem;
+  }
+
+  .post p > em:only-child {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light, #828282);
+    margin-top: 0.1rem;
+  }
+</style>

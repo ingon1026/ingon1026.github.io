@@ -55,3 +55,22 @@ Hybrid also maintained larger minimum human distances (0.69–0.75 m) across all
 **Publication:** Kim, In Gon and Shin, Soo Young, "Hybrid LLM Navigation System for Edge-Cloud Reasoning," _The Journal of Korean Institute of Communications and Information Sciences_ (JKICS), vol. 51, no. 6, pp. 1175–1186, 2026.
 
 **Patent:** Mobile Robot Navigation System and Method Using Hybrid LLM Routing Based on Natural-Language Commands and Environment Scores (application no. 10-2025-0212453) — see [Patents](/en/patents/).
+
+<style>
+  .post img {
+    display: block;
+    max-width: min(100%, 42rem);
+    height: auto;
+    margin: 0.6rem auto 0.2rem;
+    border: 1px solid var(--global-divider-color, #e0e0e0);
+    border-radius: 0.5rem;
+  }
+
+  .post p > em:only-child {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light, #828282);
+    margin-top: 0.1rem;
+  }
+</style>

@@ -55,3 +55,22 @@ Hybrid는 모든 혼잡도에서 더 큰 최소 인간 거리(0.69–0.75 m)를 
 **논문:** Kim, In Gon and Shin, Soo Young, "Hybrid LLM Navigation System for Edge-Cloud Reasoning," _The Journal of Korean Institute of Communications and Information Sciences_ (JKICS), vol. 51, no. 6, pp. 1175–1186, 2026.
 
 **특허:** 자연어 명령과 환경 점수 기반 하이브리드 대규모 언어모델 라우팅을 이용한 이동 로봇 내비게이션 시스템 및 방법 (출원번호 10-2025-0212453) — [특허](/patents/) 페이지 참고.
+
+<style>
+  .post img {
+    display: block;
+    max-width: min(100%, 42rem);
+    height: auto;
+    margin: 0.6rem auto 0.2rem;
+    border: 1px solid var(--global-divider-color, #e0e0e0);
+    border-radius: 0.5rem;
+  }
+
+  .post p > em:only-child {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light, #828282);
+    margin-top: 0.1rem;
+  }
+</style>

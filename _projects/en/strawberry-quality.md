@@ -31,3 +31,22 @@ The goal was document-grounded interpretation that adapts by swapping reference 
 `YOLOv11-seg` · `OpenCV` · `RAG` · `LLM` · `PyTorch` · `Python`
 
 **Presentation:** In Gon Kim and Soo Young Shin, "An LLM-Based Automated Strawberry Quality Assessment System for Smart Farming Environments," 35th Joint Conference on Communications and Information (JCCI 2025), 2025.
+
+<style>
+  .post img {
+    display: block;
+    max-width: min(100%, 42rem);
+    height: auto;
+    margin: 0.6rem auto 0.2rem;
+    border: 1px solid var(--global-divider-color, #e0e0e0);
+    border-radius: 0.5rem;
+  }
+
+  .post p > em:only-child {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light, #828282);
+    margin-top: 0.1rem;
+  }
+</style>

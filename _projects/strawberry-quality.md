@@ -31,3 +31,22 @@ _시스템 구성 — YOLOv11-seg 세그멘테이션 → OpenCV 정량 분석 �
 `YOLOv11-seg` · `OpenCV` · `RAG` · `LLM` · `PyTorch` · `Python`
 
 **발표:** 김인곤, 신수용, "스마트팜 환경을 위한 LLM 기반 딸기 품질 자동 판별 시스템," 제35회 통신정보 합동학술대회 (JCCI 2025), 2025.
+
+<style>
+  .post img {
+    display: block;
+    max-width: min(100%, 42rem);
+    height: auto;
+    margin: 0.6rem auto 0.2rem;
+    border: 1px solid var(--global-divider-color, #e0e0e0);
+    border-radius: 0.5rem;
+  }
+
+  .post p > em:only-child {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light, #828282);
+    margin-top: 0.1rem;
+  }
+</style>
