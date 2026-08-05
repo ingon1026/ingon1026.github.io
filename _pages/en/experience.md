@@ -7,8 +7,6 @@ lang: en
 nav: false
 ---
 
-[한국어](/experience/)
-
 ## K3I
 
 **Vision AI Researcher, Vision AI Lab** · March 2026 – Present

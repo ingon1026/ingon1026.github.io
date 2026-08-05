@@ -9,8 +9,6 @@ img: assets/img/projects/ros2-ugv.jpg
 permalink: /projects/ros2-ugv/
 ---
 
-[English](/en/projects/ros2-ugv/)
-
 ## 범위
 
 연구실의 **multi-UXV(무인이동체) 팀 프로젝트**에서 UGV(무인 지상 차량) 파트를 담당해, 플랫폼 셋업부터 자율주행 파이프라인 구축까지 수행했습니다. UGV는 드론 군집과 연계되는 이동식 충전 스테이션 역할도 겸하는 구성입니다.

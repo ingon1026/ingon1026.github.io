@@ -7,8 +7,6 @@ lang: ko
 nav: false
 ---
 
-[English](/en/experience/)
-
 ## K3I
 
 **Vision AI 연구원, Vision AI Lab** · 2026년 3월 – 현재

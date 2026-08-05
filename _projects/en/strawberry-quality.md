@@ -9,8 +9,6 @@ img: assets/img/projects/strawberry-quality.png
 permalink: /en/projects/strawberry-quality/
 ---
 
-[한국어](/projects/strawberry-quality/)
-
 ## Problem
 
 Conventional quality assessment stops at simple image classification or binary decisions, offering no **detailed interpretation** such as harvest criteria or disease-guidance references. Fixed classifiers also adapt poorly when criteria change across cultivars and environments.

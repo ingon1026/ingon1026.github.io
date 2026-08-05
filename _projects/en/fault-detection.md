@@ -9,8 +9,6 @@ img: assets/img/projects/fault-detection.png
 permalink: /en/projects/fault-detection/
 ---
 
-[한국어](/projects/fault-detection/)
-
 ## Problem
 
 Cameras on a flying drone are exposed to noise and environmental artifacts that degrade downstream perception. This project detected such faults during operation and cleaned the affected frames.

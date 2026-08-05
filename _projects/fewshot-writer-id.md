@@ -9,8 +9,6 @@ img: assets/img/projects/fewshot-writer-id.png
 permalink: /projects/fewshot-writer-id/
 ---
 
-[English](/en/projects/fewshot-writer-id/)
-
 ## 접근
 
 작성자 식별은 보통 사람마다 풍부한 필적 데이터를 전제합니다. 이 개인 사이드 프로젝트는 반대로 소량의 필적 샘플만으로 작성자를 식별하는 few-shot 설정을 다뤘습니다.

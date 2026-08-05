@@ -1,0 +1,82 @@
+<header>
+  <!--
+    Site override: language-aware navbar. Links follow the language tree of the current page, and the Language dropdown switches to the same page in the other language.
+  -->
+  {% if page.url == '/en/' or page.url contains '/en/' %}
+    {% assign is_en = true %}
+    {% assign lang_prefix = '/en' %}
+    {% assign ko_url = page.url | remove_first: '/en' %}
+    {% if ko_url == '' %}{% assign ko_url = '/' %}{% endif %}
+    {% assign en_url = page.url %}
+  {% else %}
+    {% assign is_en = false %}
+    {% assign lang_prefix = '' %}
+    {% assign ko_url = page.url %}
+    {% assign en_url = '/en' | append: page.url %}
+  {% endif %}
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
+    <div class="container">
+      {% if page.url != '/' and page.url != '/en/' %}
+        <a class="navbar-brand title font-weight-lighter" href="{{ lang_prefix | append: '/' | relative_url }}">{{ site.title }}</a>
+      {% endif %}
+      <!-- Navbar Toggle -->
+      <button
+        class="navbar-toggler collapsed navbar-toggler-main"
+        type="button"
+        data-nav-toggle="navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav">
+        <ul class="navbar-nav navbar-menu-list flex-nowrap">
+          <li class="nav-item {% if page.url == '/' or page.url == '/en/' %}active{% endif %}">
+            <a class="nav-link" href="{{ lang_prefix | append: '/' | relative_url }}">About</a>
+          </li>
+          <li class="nav-item {% if page.url contains '/projects/' %}active{% endif %}">
+            <a class="nav-link" href="{{ lang_prefix | append: '/projects/' | relative_url }}">Projects</a>
+          </li>
+          <li class="nav-item {% if page.url contains '/publications/' %}active{% endif %}">
+            <a class="nav-link" href="{{ lang_prefix | append: '/publications/' | relative_url }}">Publications</a>
+          </li>
+          <li class="nav-item {% if page.url contains '/patents/' %}active{% endif %}">
+            <a class="nav-link" href="{{ lang_prefix | append: '/patents/' | relative_url }}">Patents</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-nav-dropdown-toggle="true"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Language
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item {% unless is_en %}active{% endunless %}" href="{{ ko_url | relative_url }}">한국어</a>
+              <a class="dropdown-item {% if is_en %}active{% endif %}" href="{{ en_url | relative_url }}">English</a>
+            </div>
+          </li>
+          {% if site.enable_darkmode %}
+            <!-- Toogle theme mode -->
+            <li class="toggle-container">
+              <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme">
+                <i class="fa-half-sun-moon" id="light-toggle-system"></i>
+                <i class="fa-solid fa-moon" id="light-toggle-dark"></i>
+                <i class="fa-solid fa-sun" id="light-toggle-light"></i>
+              </button>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

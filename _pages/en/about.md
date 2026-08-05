@@ -47,7 +47,7 @@ latest_posts:
       <a href="https://www.linkedin.com/in/ingon1026" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
       <a href="https://huggingface.co/ingon1" target="_blank" rel="noopener noreferrer">🤗 Demo</a>
       <a href="https://velog.io/@ingon1026" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-pen-nib"></i> Blog</a>
-      <a href="/cv/"><i class="fa-solid fa-file"></i> CV</a>
+      <a href="/assets/pdf/KimInGon_CV.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i> CV</a>
     </div>
     <div class="yd-news">
       <h3>Recent News</h3>

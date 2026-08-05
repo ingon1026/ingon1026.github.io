@@ -9,8 +9,6 @@ img: assets/img/projects/ros2-ugv.jpg
 permalink: /en/projects/ros2-ugv/
 ---
 
-[한국어](/projects/ros2-ugv/)
-
 ## Scope
 
 In the laboratory's **multi-UXV team project**, I owned the UGV (unmanned ground vehicle) part — from platform setup to the autonomous-driving pipeline. The UGV also serves as a mobile charging station linked to the UAV swarm.

@@ -9,8 +9,6 @@ img: assets/img/projects/strawberry-quality.png
 permalink: /projects/strawberry-quality/
 ---
 
-[English](/en/projects/strawberry-quality/)
-
 ## 문제
 
 기존 품질 판별은 단순 이미지 분류나 이진 판단에 머물러, 수확 기준·병해 진단 지침 같은 **세부 해석**을 제공하지 못합니다. 품종·환경에 따라 기준이 달라질 수 있어 고정된 분류기로는 유연한 대응이 어렵다는 한계도 있습니다.

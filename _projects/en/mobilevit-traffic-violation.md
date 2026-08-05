@@ -9,8 +9,6 @@ img: assets/img/projects/mobilevit-traffic-violation.jpg
 permalink: /en/projects/mobilevit-traffic-violation/
 ---
 
-[한국어](/projects/mobilevit-traffic-violation/)
-
 ## Problem
 
 Single-frame detectors miss violations that depend on **temporal context** — signal changes, sustained crosswalk occupancy — and momentary detection failures turn into false positives. This system defines and detects three violation types under the Road Traffic Act: **signal violation, centerline crossing, and crosswalk violation**, in real time.

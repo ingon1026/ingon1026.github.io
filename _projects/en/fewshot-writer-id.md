@@ -9,8 +9,6 @@ img: assets/img/projects/fewshot-writer-id.png
 permalink: /en/projects/fewshot-writer-id/
 ---
 
-[한국어](/projects/fewshot-writer-id/)
-
 ## Approach
 
 Writer identification usually assumes abundant handwriting data per person. This personal side project targeted the few-shot setting instead: identifying a writer from only a small number of handwriting samples.

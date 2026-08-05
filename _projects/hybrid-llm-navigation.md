@@ -9,8 +9,6 @@ img: assets/img/projects/hybrid-llm-navigation.png
 permalink: /projects/hybrid-llm-navigation/
 ---
 
-[English](/en/projects/hybrid-llm-navigation/)
-
 ## 문제
 
 기존 Nav2는 사람과 박스를 똑같은 기하학적 장애물로 취급합니다. 지날 수 있는 통로도 막힌 것으로 판단해 혼잡한 환경에서 불필요한 정지와 데드락이 급증합니다. 이 연구는 **Edge LLM과 Cloud LLM을 결합한 하이브리드 판단 구조**로 자연어 명령 기반 내비게이션에 의미적 상황 판단을 더했습니다. (석사 학위 연구, WENS 연구실 · [신수용](https://scholar.google.com/citations?user=c8JDiHYAAAAJ) 교수 지도)

@@ -9,8 +9,6 @@ img: assets/img/projects/mobilevit-traffic-violation.jpg
 permalink: /projects/mobilevit-traffic-violation/
 ---
 
-[English](/en/projects/mobilevit-traffic-violation/)
-
 ## 문제
 
 단일 프레임 검출기는 신호 변화나 횡단보도 점유처럼 **시간적 맥락에 의존하는 위반**을 놓치고, 순간적인 검출 실패가 오탐으로 이어집니다. 이 시스템은 도로교통법 기준으로 **신호위반 · 중앙선 침범 · 횡단보도 위반** 세 가지를 정의하고 실시간 탐지합니다.

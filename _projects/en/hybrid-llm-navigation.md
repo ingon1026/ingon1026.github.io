@@ -9,8 +9,6 @@ img: assets/img/projects/hybrid-llm-navigation.png
 permalink: /en/projects/hybrid-llm-navigation/
 ---
 
-[한국어](/projects/hybrid-llm-navigation/)
-
 ## Problem
 
 Standard Nav2 treats humans and boxes as identical geometric obstacles, so it refuses traversable passages and suffers unnecessary stops and deadlocks as scenes get crowded. This master's research adds semantic reasoning to natural-language navigation through a **hybrid decision architecture combining an Edge LLM and a Cloud LLM** (WENS Lab, advised by Prof. [Soo Young Shin](https://scholar.google.com/citations?user=c8JDiHYAAAAJ)).

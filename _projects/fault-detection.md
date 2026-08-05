@@ -9,8 +9,6 @@ img: assets/img/projects/fault-detection.png
 permalink: /projects/fault-detection/
 ---
 
-[English](/en/projects/fault-detection/)
-
 ## 문제
 
 비행 중인 드론의 카메라는 노이즈와 외부 환경 요인에 노출되어 하위 인지 성능이 저하됩니다. 이 프로젝트는 운용 중 이런 이상을 탐지하고 해당 프레임을 정제했습니다.
