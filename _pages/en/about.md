@@ -66,17 +66,18 @@ latest_posts:
 
 <div class="yd-umbrella">
   <h3 class="yd-umbrella-title">Vision AI</h3>
-  <div class="yd-venn">
-    <div class="yd-circle yd-circle-left">
+  <div class="yd-axes">
+    <div class="yd-axis">
       <h4><i class="fa-solid fa-robot"></i> Robot Vision &amp; Navigation</h4>
       <p>ROS2 · Nav2 · SLAM · Autonomous driving</p>
     </div>
-    <div class="yd-circle yd-circle-right">
+    <div class="yd-vla">VLA</div>
+    <div class="yd-axis">
       <h4><i class="fa-solid fa-comments"></i> VLM &amp; LLM Routing</h4>
       <p>VLM · LLM · Natural-language robot control</p>
     </div>
-    <div class="yd-venn-center">VLA</div>
   </div>
+  <p class="yd-axes-note">Where the two axes meet — Vision-Language-Action (VLA)</p>
 </div>
 
 <style>
@@ -224,61 +225,63 @@ latest_posts:
     margin: 0 0 1rem;
   }
 
-  .yd-venn {
-    position: relative;
+  .yd-axes {
     display: flex;
-    justify-content: center;
+    align-items: stretch;
   }
 
-  .yd-circle {
-    width: 17rem;
-    height: 17rem;
-    border-radius: 50%;
+  .yd-axis {
+    flex: 1;
+    border: 1px solid var(--global-divider-color, #e0e0e0);
+    border-radius: 0.75rem;
+    padding: 1.1rem 2rem;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 1.2rem;
-    background: rgba(0, 86, 179, 0.06);
-    border: 1.5px solid rgba(0, 86, 179, 0.35);
   }
 
-  .yd-circle-left {
-    margin-right: -3rem;
-    padding-right: 3.6rem;
-  }
-
-  .yd-circle-right {
-    margin-left: -3rem;
-    padding-left: 3.6rem;
-  }
-
-  .yd-circle h4 {
-    font-size: 0.95rem;
+  .yd-axis h4 {
+    font-size: 0.98rem;
     font-weight: 600;
-    margin: 0 0 0.4rem;
+    margin: 0 0 0.35rem;
   }
 
-  .yd-circle h4 i {
+  .yd-axis h4 i {
     color: var(--global-theme-color, #0056b3);
     margin-right: 0.35rem;
   }
 
-  .yd-circle p {
+  .yd-axis p {
     font-size: 0.85rem;
     color: var(--global-text-color-light, #828282);
     margin: 0;
   }
 
-  .yd-venn-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.05rem;
-    font-weight: 800;
-    color: var(--global-theme-color, #0056b3);
+  .yd-vla {
+    align-self: center;
+    flex-shrink: 0;
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 50%;
+    margin: 0 -1.7rem;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--global-theme-color, #0056b3);
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 0 4px var(--global-bg-color, #fff);
+  }
+
+  .yd-axes-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light, #828282);
+    margin: 0.9rem 0 0;
   }
 
   /* responsive */
@@ -300,19 +303,12 @@ latest_posts:
       justify-content: center;
     }
 
-    .yd-venn {
+    .yd-axes {
       flex-direction: column;
-      align-items: center;
     }
 
-    .yd-circle-left {
-      margin: 0 0 -2.5rem;
-      padding: 1.2rem 1.2rem 3.4rem;
-    }
-
-    .yd-circle-right {
-      margin: 0;
-      padding: 3.4rem 1.2rem 1.2rem;
+    .yd-vla {
+      margin: -1.7rem 0;
     }
   }
 </style>
