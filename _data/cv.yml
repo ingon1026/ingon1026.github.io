@@ -105,11 +105,11 @@ cv:
 
     Patents:
       - bullet: "Nine patent applications filed with the Korean Intellectual Property Office (KIPO) in robot navigation, UAV/UGV systems, and applied deep learning. Selected:"
-      - bullet: Hybrid LLM navigation system performing semantics-based safety assessment
-      - bullet: Vision Transformer-based meta-learning for writer identification from few handwriting samples
-      - bullet: Deep-learning UAV swarm and acoustic deterrence for airport bird and wildlife management (KR 10-2025-0008806)
-      - bullet: Blockchain-based UAV logistics data management system (KR 10-2024-0164746)
-      - bullet: Guide system for visually impaired runners (KR 10-2024-0047611)
+      - bullet: Mobile robot navigation using hybrid LLM routing based on natural-language commands and environment scores (KR 10-2025-0212453, filed 2025)
+      - bullet: Vision Transformer-based meta-learning for writer identification from few handwriting samples (KR 10-2025-0134352, filed 2025)
+      - bullet: Deep-learning UAV swarm and acoustic deterrence for airport bird and wildlife management (KR 10-2025-0008806, filed 2025)
+      - bullet: Hyperspectral camera-based intelligent agriculture using unmanned aerial and ground vehicles (KR 10-2025-0080134, filed 2025)
+      - bullet: Blockchain-based UAV logistics data management system (KR 10-2024-0164746, filed 2024)
 
     Awards:
       - title: 3rd Place, Surveillance and Reconnaissance—Civilian Division
