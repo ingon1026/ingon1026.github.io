@@ -2,14 +2,9 @@
 layout: page
 title: Patents
 permalink: /en/patents/
-description: Korean patent applications in robot vision, UAV/UGV systems, and applied deep learning.
 lang: en
 nav: false
 ---
-
-[한국어](/patents/)
-
-Nine patent applications filed with the Korean Intellectual Property Office (KIPO). Titles are given as an English translation of the filed Korean title, which is shown underneath. Applicant: Kumoh National Institute of Technology Industry-Academic Cooperation Foundation.
 
 <div class="pt-list">
   <div class="pt-item">

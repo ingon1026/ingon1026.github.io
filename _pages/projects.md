@@ -2,13 +2,10 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: Robot Vision, ROS2, 엣지 AI 분야의 연구·엔지니어링 프로젝트.
 lang: ko
 nav: true
 nav_order: 2
 ---
-
-[English](/en/projects/)
 
 <div class="prj-list">
   <div class="prj-item">

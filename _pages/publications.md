@@ -2,13 +2,10 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Journal articles and conference papers in Vision AI, robotics, and LLM-assisted systems.
 lang: ko
 nav: true
 nav_order: 3
 ---
-
-[English](/en/publications/)
 
 <div class="pub-list">
   <h2 class="pub-section">Journal Articles</h2>

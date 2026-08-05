@@ -2,15 +2,10 @@
 layout: page
 title: Patents
 permalink: /patents/
-description: 로봇 비전, 무인기·무인차량 시스템, 응용 딥러닝 분야의 국내 특허 출원.
 lang: ko
 nav: true
 nav_order: 4
 ---
-
-[English](/en/patents/)
-
-특허청(KIPO)에 출원한 특허 9건입니다. 출원한 국문 명칭을 기준으로 표기하고, 영문 번역을 함께 적었습니다. 출원인: 국립금오공과대학교 산학협력단.
 
 <div class="pt-list">
   <div class="pt-item">

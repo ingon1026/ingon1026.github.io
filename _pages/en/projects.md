@@ -2,12 +2,9 @@
 layout: page
 title: Projects
 permalink: /en/projects/
-description: Selected research and engineering projects in Robot Vision, ROS2, and edge AI.
 lang: en
 nav: false
 ---
-
-[한국어](/projects/)
 
 <div class="prj-list">
   <div class="prj-item">
