@@ -6,6 +6,60 @@ lang: en
 nav: false
 ---
 
+<h2 class="prj-section">Industry</h2>
+
+<div class="prj-list">
+  <div class="prj-item">
+    <a class="prj-thumb" href="/en/projects/pose-anything/">
+      <img src="/assets/img/projects/pose-anything.jpg" alt="Zero-Shot Object Recognition and 3D Pose Estimation" />
+    </a>
+    <div class="prj-body">
+      <h3><a href="/en/projects/pose-anything/">Zero-Shot Object Recognition &amp; 3D Pose Estimation</a></h3>
+      <p class="prj-desc">Detect and track arbitrary objects from a text prompt, publish RGB-D 3D pose with confidence over ROS2 — no retraining, no CAD, 9–13 FPS.</p>
+      <p class="prj-links">
+        <a href="https://github.com/ingon1026/pose-anything">Code</a>
+        <a href="https://hub.docker.com/r/ingon1026/pose-anything">Docker</a>
+        <a href="/en/projects/pose-anything/">Details →</a>
+      </p>
+      <p class="prj-tags">SAM3 · ROS2 Jazzy · Open3D · RealSense · Isaac Sim</p>
+    </div>
+  </div>
+
+  <div class="prj-item">
+    <a class="prj-thumb" href="/en/projects/xr-splat/">
+      <img src="/assets/img/projects/xr-splat.jpg" alt="Gaussian Splatting XR Space Reconstruction and Localization" />
+    </a>
+    <div class="prj-body">
+      <h3><a href="/en/projects/xr-splat/">Gaussian Splatting XR Space Reconstruction &amp; Localization</a></h3>
+      <p class="prj-desc">Space assets and indoor localization in one coordinate frame, via 360° video and RGB-D SLAM — 123 FPS rendering, 100% global relocalization at 62.8 FPS.</p>
+      <p class="prj-links">
+        <a href="https://github.com/ingon1026/xr-splat">Code</a>
+        <a href="https://huggingface.co/spaces/ingon1/xr-splat-demo">Demo</a>
+        <a href="/en/projects/xr-splat/">Details →</a>
+      </p>
+      <p class="prj-tags">3DGS · ORB-SLAM3 · OpenSfM · Insta360 · WebGL</p>
+    </div>
+  </div>
+
+  <div class="prj-item">
+    <a class="prj-thumb" href="/en/projects/drawing-character/">
+      <img src="/assets/img/projects/drawing-character.png" alt="Drawing-Based Interactive Character" />
+    </a>
+    <div class="prj-body">
+      <h3><a href="/en/projects/drawing-character/">Drawing-Based Interactive Character</a></h3>
+      <p class="prj-desc">Auto-rig hand drawings and drive them with the user's body motion, facial expressions, and speech in real time — talking video generation 4.8→2.1 s.</p>
+      <p class="prj-links">
+        <a href="https://github.com/ingon1026/drawface-live">Code</a>
+        <a href="https://ingon1-drawface-live.static.hf.space">Demo</a>
+        <a href="/en/projects/drawing-character/">Details →</a>
+      </p>
+      <p class="prj-tags">MediaPipe · ARKit 52ch · LivePortrait · TensorRT · WebGL</p>
+    </div>
+  </div>
+</div>
+
+<h2 class="prj-section">Research</h2>
+
 <div class="prj-list">
   <div class="prj-item">
     <a class="prj-thumb" href="/en/projects/hybrid-llm-navigation/">
@@ -99,6 +153,15 @@ nav: false
 </div>
 
 <style>
+  .prj-section {
+    color: var(--global-theme-color, #0056b3);
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--global-divider-color, #e0e0e0);
+    padding-bottom: 0.4rem;
+    margin: 1.8rem 0 1rem;
+  }
+
   .prj-item {
     display: flex;
     gap: 1.1rem;

@@ -7,6 +7,60 @@ nav: true
 nav_order: 2
 ---
 
+<h2 class="prj-section">Industry</h2>
+
+<div class="prj-list">
+  <div class="prj-item">
+    <a class="prj-thumb" href="/projects/pose-anything/">
+      <img src="/assets/img/projects/pose-anything.jpg" alt="제로샷 객체 인식·3D Pose 추정 시스템" />
+    </a>
+    <div class="prj-body">
+      <h3><a href="/projects/pose-anything/">제로샷 객체 인식·3D Pose 추정 시스템</a></h3>
+      <p class="prj-desc">텍스트 프롬프트만으로 임의 물체를 인식·추적하고 RGB-D로 3D 자세·신뢰도를 ROS2로 발행 — 재학습 없음, CAD 없음, 9~13 FPS.</p>
+      <p class="prj-links">
+        <a href="https://github.com/ingon1026/pose-anything">Code</a>
+        <a href="https://hub.docker.com/r/ingon1026/pose-anything">Docker</a>
+        <a href="/projects/pose-anything/">Details →</a>
+      </p>
+      <p class="prj-tags">SAM3 · ROS2 Jazzy · Open3D · RealSense · Isaac Sim</p>
+    </div>
+  </div>
+
+  <div class="prj-item">
+    <a class="prj-thumb" href="/projects/xr-splat/">
+      <img src="/assets/img/projects/xr-splat.jpg" alt="Gaussian Splatting 기반 XR 공간 재구성·위치추정" />
+    </a>
+    <div class="prj-body">
+      <h3><a href="/projects/xr-splat/">Gaussian Splatting 기반 XR 공간 재구성·위치추정</a></h3>
+      <p class="prj-desc">360° 영상과 RGB-D SLAM 두 접근으로 공간 자산과 실내 위치추정을 한 좌표계에서 — 렌더 123 FPS, 전역 위치추정 100%·62.8 FPS.</p>
+      <p class="prj-links">
+        <a href="https://github.com/ingon1026/xr-splat">Code</a>
+        <a href="https://huggingface.co/spaces/ingon1/xr-splat-demo">Demo</a>
+        <a href="/projects/xr-splat/">Details →</a>
+      </p>
+      <p class="prj-tags">3DGS · ORB-SLAM3 · OpenSfM · Insta360 · WebGL</p>
+    </div>
+  </div>
+
+  <div class="prj-item">
+    <a class="prj-thumb" href="/projects/drawing-character/">
+      <img src="/assets/img/projects/drawing-character.png" alt="사용자 그림 기반 인터랙티브 캐릭터" />
+    </a>
+    <div class="prj-body">
+      <h3><a href="/projects/drawing-character/">사용자 그림 기반 인터랙티브 캐릭터</a></h3>
+      <p class="prj-desc">손그림을 자동 인식·리깅하고 사용자의 몸동작·표정·음성을 실시간으로 입히는 캐릭터 기술 — 발화 영상 생성 4.8→2.1초.</p>
+      <p class="prj-links">
+        <a href="https://github.com/ingon1026/drawface-live">Code</a>
+        <a href="https://ingon1-drawface-live.static.hf.space">Demo</a>
+        <a href="/projects/drawing-character/">Details →</a>
+      </p>
+      <p class="prj-tags">MediaPipe · ARKit 52ch · LivePortrait · TensorRT · WebGL</p>
+    </div>
+  </div>
+</div>
+
+<h2 class="prj-section">Research</h2>
+
 <div class="prj-list">
   <div class="prj-item">
     <a class="prj-thumb" href="/projects/hybrid-llm-navigation/">
@@ -100,6 +154,15 @@ nav_order: 2
 </div>
 
 <style>
+  .prj-section {
+    color: var(--global-theme-color, #0056b3);
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--global-divider-color, #e0e0e0);
+    padding-bottom: 0.4rem;
+    margin: 1.8rem 0 1rem;
+  }
+
   .prj-item {
     display: flex;
     gap: 1.1rem;
