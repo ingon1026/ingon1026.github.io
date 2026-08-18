@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 제로샷 객체 인식·3D Pose 추정 시스템
-description: 텍스트 프롬프트만으로 임의 물체를 인식하고 RGB-D로 3D 자세를 추정하는 로봇 인지 파이프라인.
+description: 텍스트로 물체 이름만 입력하면 재학습 없이 인식·추적하고 3D 자세까지 계산하는 로봇 인지 파이프라인.
 category: industry
 importance: 1
 lang: ko
@@ -11,37 +11,35 @@ permalink: /projects/pose-anything/
 
 ## 문제
 
-컨베이어 위 물체를 로봇이 집으려면 3D 자세(위치·크기·방향)가 필요한데, 기존 방식은 물체가 바뀔 때마다 데이터 수집→라벨링→재학습(일 단위)이거나 CAD 모델을 요구합니다. 이 프로젝트는 **텍스트 프롬프트("thermos", "book")만 바꾸면 임의 물체를 즉시 검출·추적**하고, RGB-D 기하로 3D 자세와 신뢰도까지 산출해 ROS2로 발행합니다 — 학습 없음, CAD 없음. (K3I 재직 중 수행)
+로봇이 컨베이어 위 물체를 집으려면 물체의 3D 위치·크기·방향을 알아야 합니다. 기존에는 물체가 바뀔 때마다 사진을 모으고 라벨링해서 모델을 다시 학습시키거나(며칠 단위), 물체의 CAD 도면이 필요했습니다. 이 프로젝트는 그 과정을 없앴습니다 — **"thermos", "book"처럼 물체 이름을 글자로 입력하면 바로 인식**합니다. (K3I 재직 중 수행)
 
 <video autoplay loop muted playsinline style="display: block; max-width: min(100%, 42rem); margin: 0.6rem auto 0.2rem; border: 1px solid var(--global-divider-color, #e0e0e0); border-radius: 0.5rem">
   <source src="/assets/video/pose-anything-demo.mp4" type="video/mp4" />
 </video>
 
-_실시간 데모 — 텍스트 프롬프트로 지정한 물체들을 검출·추적하며 3D OBB와 자세를 발행합니다._
+_실시간 데모 — 글자로 지정한 물체를 찾아 추적하면서 3D 상자(위치·크기·방향)를 계산합니다._
 
-## 시스템
+## 어떻게 만들었나
 
-**SAM3 제로샷 인식** — Meta SAM 3(open-vocabulary detection+segmentation)로 텍스트 프롬프트 기반 분할. 새 물체를 추가할 때 재학습 파이프라인 자체를 만들지 않았습니다. bf16 추론으로 fp32 대비 3.7배 가속, 프롬프트별 텍스트 임베딩 캐시.
-
-**하이브리드 추적** — SAM3 상시 추론은 ~3 FPS가 상한이라, 5프레임마다 한 번만 돌리고 사이 프레임은 Lucas-Kanade 광학흐름(마스크 내 ~300점, 이동량 중앙값)으로 마스크를 이동시킵니다. 3D 자세는 매 프레임 실제 depth로 재계산 — 결과 **9~13 FPS**. 가림(occlusion) 상황에서도 동일 객체 ID를 유지합니다.
-
-**기하 기반 3D 자세** — 마스크+aligned depth를 역투영해 점군을 만들고 Open3D PCA OBB로 위치·크기·방향을 추정합니다(정지 물체 크기 실물 대비 ±1cm). PCA 축의 순열·부호 임의성은 축 매칭 → 2° 데드밴드 → slerp 3단으로 안정화해 **프레임당 0.94°, 축 뒤집힘 0회**.
-
-**확률 융합 필터** — 임계값 게이트를 쌓는 대신 축별 칼만 필터 + χ² 게이트(위치/크기 분리)로 관측 신뢰를 판정합니다. 거부가 이어지면 예측 불확실성이 커져 게이트가 스스로 열리므로 **교착이 원리적으로 불가능**하고, 물체별 관측 잡음(실측 40배 차이)은 트랙별로 적응합니다.
+- **인식은 Meta의 SAM3 모델로.** 텍스트로 지정한 물체를 화면에서 찾아 오려냅니다. 새 물체가 와도 프롬프트만 바꾸면 되고, 학습은 필요 없습니다.
+- **속도는 광학흐름으로.** SAM3는 무거워서 매 프레임 돌리면 초당 3장이 한계입니다. 그래서 5프레임에 한 번만 SAM3를 돌리고, 그 사이에는 가벼운 광학흐름으로 물체를 따라가게 해 **초당 9~13프레임**을 냈습니다.
+- **3D 자세는 깊이 카메라 계산으로.** RealSense 깊이 데이터를 3D 점으로 바꿔, 물체를 감싸는 상자(OBB)의 위치·크기·방향을 구합니다. 정지 물체 기준 실제 크기와 **±1cm** 오차이고, 상자 방향이 프레임마다 튀지 않게 안정화해 축 뒤집힘 0회를 만들었습니다.
+- **믿을 수 없는 값은 안 보냅니다.** 칼만 필터가 관측을 검사해서, 물체가 가려지는 등 값이 이상하면 좌표 발행을 잠시 멈추고 다시 나타나면 같은 ID로 이어서 추적합니다. 로봇에게 틀린 좌표를 주지 않는 것이 원칙입니다.
+- **로봇과는 ROS2로 연결.** 결과를 ROS2 토픽으로 내보내 RViz와 로봇 제어 노드가 바로 쓸 수 있고, Isaac Sim 가상 컨베이어에서도 같은 파이프라인을 검증했습니다.
 
 ![ROS2 파이프라인](/assets/img/projects/figs/pose-pipeline.png)
 
-_ROS2 노드·토픽 구성 — 카메라 입력과 프롬프트를 받아 /perception/detections·markers·debug_image를 발행하고 RViz·로봇 노드가 소비합니다._
+_카메라 영상과 텍스트 프롬프트가 들어가서, 인식 결과가 ROS2 토픽으로 나오는 구조._
 
 ![발행 시점의 3D 자세](/assets/img/projects/figs/pose-detections.gif)
 
-_로봇이 실제 받는 것 — 가림 중에는 자세 발행을 보류하고("pose withheld") 재등장 시 같은 ID로 재개합니다. 신뢰하지 못하는 좌표는 로봇에 보내지 않는다는 발행 철학입니다._
+_로봇이 실제로 받는 화면 — 물체가 가려지면 좌표 발행을 멈췄다가, 다시 보이면 같은 ID로 이어집니다._
 
 ![Isaac Sim 연동](/assets/img/projects/figs/pose-isaac.jpg)
 
-_Isaac Sim 컨베이어 디지털 트윈 연동 — XR 기술융합팀에서 구축한 환경을 ROS2 Bridge로 연결해 가상 카메라에서 동일 파이프라인을 검증합니다._
+_Isaac Sim 가상 컨베이어 연동 — XR 기술융합팀이 만든 시뮬레이션 환경에서도 같은 인식이 동작합니다._
 
-`ROS2 Jazzy` · `SAM3` · `Open3D` · `RealSense D455` · `RGB-D` · `Kalman fusion` · `RViz` · `Isaac Sim` · `Docker`
+`SAM3` · `ROS2 Jazzy` · `Open3D` · `RealSense D455` · `RGB-D` · `Kalman filter` · `RViz` · `Isaac Sim` · `Docker`
 
 **Code:** [github.com/ingon1026/pose-anything](https://github.com/ingon1026/pose-anything) (MIT) · **Docker:** [hub.docker.com/r/ingon1026/pose-anything](https://hub.docker.com/r/ingon1026/pose-anything)
 

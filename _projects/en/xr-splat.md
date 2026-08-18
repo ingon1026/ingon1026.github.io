@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Gaussian Splatting XR Space Reconstruction & Localization
-description: Two approaches — 360° video and RGB-D SLAM — to photorealistic space assets and indoor localization.
+description: Capture a space once and get a walkable photoreal 3D space — plus indoor localization — via two pipelines.
 category: industry
 importance: 2
 lang: en
@@ -11,49 +11,47 @@ permalink: /en/projects/xr-splat/
 
 ## Overview
 
-Applied Gaussian Splatting to XR space reconstruction through **two approaches with different inputs and goals** — ① 360° video-based reconstruction from an Insta360 camera, and ② RGB-D SLAM combined with Gaussian Splatting for reconstruction plus localization. (Carried out while at K3I.)
+Capture a space once with a camera and get a **photorealistic 3D space you can walk through in a browser**. Two pipelines were built depending on the camera — ① walking with a 360° camera, ② a depth camera + SLAM that also gives indoor localization. (Carried out while at K3I.)
 
-## ① 360° video reconstruction — 360GS
+## ① Building a space from a 360° camera
 
-A ~70-second walk with an Insta360 becomes a browser-walkable 3D Gaussian asset. OpenSfM estimates spherical camera poses, and the existing 360° GS implementation was extended to **initialize Gaussians from the MVS dense point cloud** (fork contribution).
+Just **walk the space for about 70 seconds** with an Insta360. OpenSfM works out where each video frame was taken (camera positions), a dense 3D point cloud is built from them, and Gaussian Splatting is trained from those points into a finished 3D space.
+
+The key improvement was **starting from dense points**. Instead of the usual sparse points, millions of dense points from MVS seed the training — image quality improved by **+2.3 dB** and most floating artifacts disappeared.
 
 ![MVS dense point cloud and camera trajectory](/assets/img/projects/figs/xrsplat-mvs-cloud.jpg)
 
-_Dense point cloud and capture trajectory recovered with OpenSfM/MVS — these dense points seed the Gaussians._
+_The dense 3D point cloud recovered from the footage, with the walking path — these points seed the 3D space._
 
-![360° Gaussian Splatting render](/assets/img/projects/figs/xrsplat-360-render.jpg)
+![360° Gaussian Splatting render](/assets/img/projects/figs/xrsplat-360-render.gif)
 
-_360° Gaussian Splatting render of a self-captured lobby space._
+_Free-viewpoint fly-through of the finished lobby space — rendered even from angles never actually walked._
 
-- Dense initialization: held-out **PSNR +2.3 dB** in sparse-view tests, most floaters removed
-- Two self-captured scenes: SfM registration **142/142 and 149/149**, test PSNR **19.70 / 19.99 dB**
-- Tooling contributions: photographer masking for selfie-stick captures, unified novel-view rendering
+- Both self-captured scenes registered every frame (142/142, 149/149), quality 19.70 / 19.99 dB
 
-## ② RGB-D SLAM × Gaussian Splatting — xr-splat
+## ② Depth camera + SLAM, with localization
 
-From a single RGB-D recording, produce **two artifacts sharing one coordinate frame** — a photorealistic 3D Gaussian asset and an indoor localizer for that space. An XR device re-entering the space gets "where am I" and "what does it look like" at once, with no alignment step.
+From a single RGB-D (depth) recording, **two things are produced at once** — a photoreal 3D space, and the ability to know "where am I right now" inside it. The goal: when an XR device re-enters the space, it instantly gets both its position and the rendered view.
 
-The key decision is **decoupling SLAM from Gaussian Splatting**. Reproducing coupled Gaussian-SLAM systems (SplaTAM, Photo-SLAM, etc.) traded away rendering quality, tracking accuracy, and speed all at once — so localization goes to ORB-SLAM3, and photorealism goes to gsplat (MCMC) trained on **frozen SLAM poses**. Both maps derive from the same poses, so the coordinate frame is shared by construction.
+The method is a division of labor. **ORB-SLAM3** works out where the camera traveled (position), and **gsplat** takes those positions as-is to build the photoreal space (graphics). Because both start from the same positions, the two maps **overlap automatically** — no alignment step. Existing methods that solve position and graphics in one model were reproduced first and came out mediocre at both, which motivated the split.
 
 ![Localization inside the Gaussian map](/assets/img/projects/figs/xrsplat-localize-render.jpg)
 
-_Camera trajectory shown inside the Gaussian map — rendering and localization operate in the same coordinate frame._
+_The camera's path shown inside the finished 3D space — position and graphics share the same coordinates._
 
-| Validation                            | Result                                                                 |
-| ------------------------------------- | ---------------------------------------------------------------------- |
-| TUM fr1/desk ATE (ORB-SLAM3 poses)    | **1.89 cm** (COLMAP baseline 2.04 cm)                                  |
-| Own RGB-D asset quality               | **27.96 dB PSNR** (MCMC strategy, +4.1 dB over default at same budget) |
-| Global relocalization                 | **100%** (no pose hint)                                                |
-| Feature-PnP localization speed        | **62.8 FPS** (CPU only)                                                |
-| Render speed (2M Gaussians, 1280×720) | **123 FPS**                                                            |
+| What was verified                       | Result                                                                    |
+| --------------------------------------- | ------------------------------------------------------------------------- |
+| Position accuracy (public TUM data)     | **1.89 cm** error (more accurate than the standard tool COLMAP's 2.04 cm) |
+| Image quality, own capture              | **27.96 dB**                                                              |
+| Finding own position from unseen frames | **100% success**                                                          |
+| Localization speed                      | **62.8 times per second** (CPU only)                                      |
+| Rendering speed                         | **123 FPS** (one consumer GPU)                                            |
 
 ![Global localization across the full 28.8 m map](/assets/img/projects/figs/xrsplat-full-map.png)
 
-_40/40 global localizations across the full 28.8 m walk (242 keyframes) — it works along the whole path, not just at one spot._
+_Position found from anywhere along the full 28.8 m walk (40/40) — it works along the whole path, not just one spot._
 
-Absolute accuracy is only claimed on public TUM data (own captures have no mocap ground truth). Experiments also quantified that the quality ceiling is **capture coverage and sensor quality**, not Gaussian count — the same code reaches 45.35 dB on clean synthetic data, a +17 dB gap from data alone.
-
-`3D Gaussian Splatting` · `gsplat` · `ORB-SLAM3` · `OpenSfM` · `MVS` · `RealSense D455` · `Insta360` · `PyTorch` · `CUDA` · `WebGL`
+`3D Gaussian Splatting` · `gsplat` · `ORB-SLAM3` · `OpenSfM` · `RealSense D455` · `Insta360` · `PyTorch` · `CUDA` · `WebGL`
 
 **Code:** [github.com/ingon1026/xr-splat](https://github.com/ingon1026/xr-splat) · [github.com/ingon1026/360-gaussian-splatting](https://github.com/ingon1026/360-gaussian-splatting) (fork contribution) · **Demo:** [HF xr-splat-demo](https://huggingface.co/spaces/ingon1/xr-splat-demo) · [HF 360gs-walkthroughs](https://huggingface.co/spaces/ingon1/360gs-walkthroughs)
 

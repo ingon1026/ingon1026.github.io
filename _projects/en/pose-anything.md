@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Zero-Shot Object Recognition & 3D Pose Estimation
-description: A robot perception pipeline that detects arbitrary objects from text prompts and estimates 3D pose from RGB-D.
+description: A robot perception pipeline that recognizes and tracks any object from a typed name — no retraining — and computes its 3D pose.
 category: industry
 importance: 1
 lang: en
@@ -11,37 +11,35 @@ permalink: /en/projects/pose-anything/
 
 ## Problem
 
-For a robot to pick objects off a conveyor it needs 3D pose (position, size, orientation) — but conventional approaches require per-object data collection, labeling, and retraining (days of work) or a CAD model. This project detects and tracks **arbitrary objects by simply changing a text prompt** ("thermos", "book"), derives 3D pose and confidence from RGB-D geometry, and publishes everything over ROS2 — no training, no CAD. (Carried out while at K3I.)
+For a robot to pick objects off a conveyor, it needs each object's 3D position, size, and orientation. The usual way is to collect photos, label them, and retrain a model every time the object changes (days of work), or to have a CAD model. This project removes that step — **type the object's name, like "thermos" or "book", and it is recognized immediately**. (Carried out while at K3I.)
 
 <video autoplay loop muted playsinline style="display: block; max-width: min(100%, 42rem); margin: 0.6rem auto 0.2rem; border: 1px solid var(--global-divider-color, #e0e0e0); border-radius: 0.5rem">
   <source src="/assets/video/pose-anything-demo.mp4" type="video/mp4" />
 </video>
 
-_Live demo — objects specified by text prompt are detected and tracked while 3D OBBs and poses are published._
+_Live demo — objects named by text are found and tracked while their 3D boxes (position, size, orientation) are computed._
 
-## System
+## How it works
 
-**SAM3 zero-shot recognition** — Meta SAM 3 (open-vocabulary detection + segmentation) segments objects from text prompts. No retraining pipeline was built at all for new objects. bf16 inference gives 3.7× speedup over fp32; text embeddings are cached per prompt.
-
-**Hybrid tracking** — continuous SAM3 inference caps at ~3 FPS, so it runs only every 5th frame and Lucas-Kanade optical flow (median displacement of ~300 in-mask points) carries the mask in between. 3D pose is recomputed every frame from that frame's actual depth — resulting in **9–13 FPS**. Object identity survives temporary occlusion.
-
-**Geometry-based 3D pose** — mask + aligned depth are back-projected into a point cloud, and an Open3D PCA oriented bounding box gives position, size, and orientation (static object sizes within ±1 cm of ground truth). PCA axis permutation/sign ambiguity is stabilized in three stages — axis matching → 2° deadband → slerp — yielding **0.94°/frame with zero axis flips**.
-
-**Probabilistic fusion filter** — instead of stacking threshold gates, per-axis Kalman filters with separate χ² gates (position/size) judge observation trust. When rejections persist, prediction uncertainty grows and the gate reopens by itself — **deadlock is impossible by construction** — and per-object observation noise (measured to vary 40×) adapts per track.
+- **Recognition uses Meta's SAM3 model.** It finds and cuts out the object named in the text prompt. A new object only needs a new prompt — no training.
+- **Speed comes from optical flow.** SAM3 is heavy — run every frame it caps at ~3 FPS. So SAM3 runs only every 5th frame, and lightweight optical flow carries the object in between, reaching **9–13 FPS**.
+- **3D pose comes from depth-camera geometry.** RealSense depth pixels are turned into 3D points and a bounding box (position, size, orientation) is fitted — within **±1 cm** of real size for static objects, with the box orientation stabilized so it never flips between frames.
+- **Untrusted values are never sent.** A Kalman filter checks each observation; if an object is occluded or the reading looks wrong, pose publishing pauses and resumes under the same ID when the object reappears. The robot never receives a coordinate the system doesn't trust.
+- **Connected to robots via ROS2.** Results are published as ROS2 topics for RViz and robot control nodes, and the same pipeline was validated in an Isaac Sim virtual conveyor.
 
 ![ROS2 pipeline](/assets/img/projects/figs/pose-pipeline.png)
 
-_ROS2 node/topic layout — camera input and prompts flow into perception, which publishes /perception/detections, markers, and debug_image for RViz and robot consumer nodes._
+_Camera frames and text prompts go in; recognition results come out as ROS2 topics._
 
 ![Published poses](/assets/img/projects/figs/pose-detections.gif)
 
-_What the robot actually receives — during occlusion, pose publication is withheld and resumes under the same ID on reappearance. Coordinates that cannot be trusted are never sent to the robot._
+_What the robot actually receives — publishing pauses during occlusion and resumes under the same ID._
 
 ![Isaac Sim integration](/assets/img/projects/figs/pose-isaac.jpg)
 
-_Isaac Sim conveyor digital twin — the environment built by the XR technology convergence team is connected over the ROS2 Bridge so the same pipeline is validated against a virtual camera._
+_The same recognition running against a virtual camera in the Isaac Sim conveyor environment built by the XR technology convergence team._
 
-`ROS2 Jazzy` · `SAM3` · `Open3D` · `RealSense D455` · `RGB-D` · `Kalman fusion` · `RViz` · `Isaac Sim` · `Docker`
+`SAM3` · `ROS2 Jazzy` · `Open3D` · `RealSense D455` · `RGB-D` · `Kalman filter` · `RViz` · `Isaac Sim` · `Docker`
 
 **Code:** [github.com/ingon1026/pose-anything](https://github.com/ingon1026/pose-anything) (MIT) · **Docker:** [hub.docker.com/r/ingon1026/pose-anything](https://hub.docker.com/r/ingon1026/pose-anything)
 

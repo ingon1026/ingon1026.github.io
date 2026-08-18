@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Drawing-Based Interactive Character
-description: Recognizing and rigging hand drawings, then driving them with body motion, facial expressions, and speech in real time.
+description: AI recognizes a hand drawing and turns it into a moving character driven by your body, face, and voice.
 category: industry
 importance: 3
 lang: en
@@ -11,42 +11,45 @@ permalink: /en/projects/drawing-character/
 
 ## Overview
 
-Interactive character technology that turns a user's own drawing into a moving character with Vision AI, then applies the user's body motion, facial expressions, and even text/voice to the drawing. The work grew in three directions: ① body motion → hand-drawing animation, ② real-time facial expression transfer, ③ a talking character. (Carried out while at K3I.)
+Technology that recognizes a drawing on paper and turns it into a **moving character**. Your body motion, facial expressions, and even your voice are applied to the drawing — when you move, the drawing moves; type text, and the drawing speaks. (Carried out while at K3I.)
 
-## ① Body-motion Animated Drawing
+## ① A drawing that moves like you
 
-MediaPipe Pose extracts **33 body landmarks** per webcam frame, converted into BVH motion and retargeted onto the character skeleton that AnimatedDrawings auto-detects in the hand drawing. User-recorded, Rokoko, Mixamo, and stock motions are unified into a single BVH motion library, so the same motion drives different drawings.
+- The **MediaPipe Pose model** finds 33 body joints in every webcam frame.
+- Those joint movements are converted into the standard animation format (BVH).
+- **Meta's AnimatedDrawings** automatically finds the character and its limbs in the hand drawing, and the converted motion is applied to it.
+- Motions recorded from the webcam, plus stock motions from Rokoko and Mixamo, are collected in the same format — so **any motion can drive any drawing**.
 
 ![Drawing recognition and rigging flow](/assets/img/projects/figs/drawing-bvh-flow.gif)
 
-_The flow from a hand drawing — automatic detection and joint extraction — with the BVH-driven character actually moving at the end._
+_The character and its joints are found automatically in the drawing, and applying motion makes it actually move._
 
 ![Motion retargeting](/assets/img/projects/figs/drawing-motion-retarget.gif)
 
-_A user's actual movement retargeted onto multiple hand-drawn characters at once._
+_When the user moves, multiple hand-drawn characters follow at the same time._
 
-## ② Real-time expression transfer — DrawFace Live
+## ② A drawing that mirrors your face — DrawFace Live
 
-Webcam expressions transfer in real time onto a 3D head, 2D vector characters, and hand drawings. **Everything runs in the browser — no server, and face video never leaves the device.** MediaPipe FaceLandmarker's 478 landmarks and **ARKit 52-channel blendshapes** are the common language consumed by both the 3D and 2D renderers.
+Characters — a 3D head, 2D characters, and hand drawings — mirror your webcam expressions in real time. **Everything runs inside the browser: no server, and your face video never leaves your device.**
 
-Technology choices were settled by measurement: neural warping (LivePortrait family) smears the art style on hand drawings, so **hand drawings use deterministic ARAP deformation** (preserving original strokes) while **standard-proportion illustrations use LivePortrait TensorRT** (27–37 ms/frame, ~30 FPS).
+- The **MediaPipe face model** finds 478 points on the face and converts them into **52 expression values** — blink, mouth open, smile, and so on.
+- Those values drive the 3D character's facial muscles and the drawing's deformation directly.
+- Experiments showed neural networks smear the art style of hand drawings, so hand drawings use **geometric deformation (ARAP) that bends the original strokes as-is**. Normally proportioned illustrations instead use the **LivePortrait model (TensorRT-accelerated, ~30 fps)**.
 
 ![Expression mirroring](/assets/img/projects/figs/drawing-face-mirror.jpg)
 
-_Webcam face tracking converted into ARKit 52 channels and mirrored onto the 3D head in real time._
+_Webcam expressions transferred onto the 3D character in real time._
 
-## ③ Talking Drawing Avatar
+## ③ A drawing that talks — Talking Drawing Avatar
 
-Drop in one drawing and some text, and the drawing speaks. A local LLM (EXAONE 3.5) judges per-sentence emotion, which lands simultaneously in the voice tone (edge-TTS) and the facial expression, while JoyVASA + LivePortrait generate speech video where the mouth actually opens. Fully local.
+Drop in one drawing and some text, and **the drawing speaks with emotion.**
 
-| Optimization step                                      | Playback start (4.7 s utterance) |
-| ------------------------------------------------------ | -------------------------------- |
-| Initial                                                | 4.8 s                            |
-| TensorRT (replacing only the warping+spade bottleneck) | 3.3 s                            |
-| Fragment streaming                                     | 2.3 s                            |
-| Parallelized emotion judging                           | **2.1 s**                        |
+- A local LLM (**EXAONE 3.5**) judges the emotion of each sentence (joy, sadness, ...).
+- That emotion lands in both the **voice tone (edge-TTS)** and the **facial expression** at the same time.
+- **JoyVASA + LivePortrait** generate speech video where the mouth actually opens. Everything runs locally.
+- Accelerating only the bottleneck with TensorRT and streaming video while it is generated cut the **time until speech starts from 4.8 s to 2.1 s**.
 
-`MediaPipe` · `ARKit 52ch` · `AnimatedDrawings` · `BVH` · `ARAP` · `WebGL` · `LivePortrait` · `TensorRT` · `JoyVASA` · `EXAONE 3.5` · `edge-TTS` · `FastAPI`
+`MediaPipe` · `AnimatedDrawings` · `BVH` · `ARAP` · `WebGL` · `LivePortrait` · `TensorRT` · `JoyVASA` · `EXAONE 3.5` · `edge-TTS` · `FastAPI`
 
 **Code:** [github.com/ingon1026/drawface-live](https://github.com/ingon1026/drawface-live) · [github.com/ingon1026/talking-drawing-avatar](https://github.com/ingon1026/talking-drawing-avatar) · **Demo:** [HF DrawFace Live](https://ingon1-drawface-live.static.hf.space)
 
