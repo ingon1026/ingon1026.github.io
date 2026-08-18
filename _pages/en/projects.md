@@ -43,7 +43,7 @@ nav: false
 
   <div class="prj-item">
     <a class="prj-thumb" href="/en/projects/drawing-character/">
-      <img src="/assets/img/projects/drawing-character.gif" alt="Drawing-Based Interactive Character" />
+      <img src="/assets/img/projects/figs/drawing-bvh-flow.gif" alt="Drawing-Based Interactive Character" style="object-fit: contain; background: #fff" />
     </a>
     <div class="prj-body">
       <h3><a href="/en/projects/drawing-character/">Drawing-Based Interactive Character</a></h3>

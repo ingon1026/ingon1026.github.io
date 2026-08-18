@@ -5,7 +5,7 @@ description: Recognizing and rigging hand drawings, then driving them with body 
 category: industry
 importance: 3
 lang: en
-img: assets/img/projects/drawing-character.gif
+img: assets/img/projects/figs/drawing-bvh-flow.gif
 permalink: /en/projects/drawing-character/
 ---
 
@@ -17,13 +17,9 @@ Interactive character technology that turns a user's own drawing into a moving c
 
 MediaPipe Pose extracts **33 body landmarks** per webcam frame, converted into BVH motion and retargeted onto the character skeleton that AnimatedDrawings auto-detects in the hand drawing. User-recorded, Rokoko, Mixamo, and stock motions are unified into a single BVH motion library, so the same motion drives different drawings.
 
-![Drawing recognition and rigging flow](/assets/img/projects/figs/drawing-bvh-flow.png)
+![Drawing recognition and rigging flow](/assets/img/projects/figs/drawing-bvh-flow.gif)
 
-_The flow from a hand drawing — automatic character detection and joint extraction — to animation combined with BVH motion._
-
-![Animated drawing result](/assets/img/projects/figs/drawing-animated-result.gif)
-
-_The hand-drawn character actually moving once BVH motion is applied._
+_The flow from a hand drawing — automatic detection and joint extraction — with the BVH-driven character actually moving at the end._
 
 ![Motion retargeting](/assets/img/projects/figs/drawing-motion-retarget.gif)
 

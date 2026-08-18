@@ -44,7 +44,7 @@ nav_order: 2
 
   <div class="prj-item">
     <a class="prj-thumb" href="/projects/drawing-character/">
-      <img src="/assets/img/projects/drawing-character.gif" alt="사용자 그림 기반 인터랙티브 캐릭터" />
+      <img src="/assets/img/projects/figs/drawing-bvh-flow.gif" alt="사용자 그림 기반 인터랙티브 캐릭터" style="object-fit: contain; background: #fff" />
     </a>
     <div class="prj-body">
       <h3><a href="/projects/drawing-character/">사용자 그림 기반 인터랙티브 캐릭터</a></h3>

@@ -5,7 +5,7 @@ description: 손그림을 인식·리깅하고 사용자의 몸동작·표정·�
 category: industry
 importance: 3
 lang: ko
-img: assets/img/projects/drawing-character.gif
+img: assets/img/projects/figs/drawing-bvh-flow.gif
 permalink: /projects/drawing-character/
 ---
 
@@ -17,13 +17,9 @@ permalink: /projects/drawing-character/
 
 웹캠 영상에서 MediaPipe Pose로 **33개 신체 관절**을 추출해 BVH Motion으로 변환하고, AnimatedDrawings가 자동 인식한 손그림 캐릭터 골격에 리타게팅합니다. 사용자 촬영 모션·Rokoko·Mixamo·기본 모션을 하나의 BVH 라이브러리로 통합해 같은 모션을 서로 다른 손그림에 적용할 수 있습니다.
 
-![그림 인식·리깅 흐름](/assets/img/projects/figs/drawing-bvh-flow.png)
+![그림 인식·리깅 흐름](/assets/img/projects/figs/drawing-bvh-flow.gif)
 
-_손그림에서 캐릭터 영역과 관절을 자동 인식하고, BVH 모션을 결합해 애니메이션을 생성하는 흐름._
-
-![모션이 결합된 손그림](/assets/img/projects/figs/drawing-animated-result.gif)
-
-_BVH 모션이 결합되어 실제로 움직이는 손그림 캐릭터._
+_손그림에서 캐릭터 영역과 관절을 자동 인식하고, BVH 모션이 결합된 캐릭터가 실제로 움직이는 흐름._
 
 ![모션 리타게팅](/assets/img/projects/figs/drawing-motion-retarget.gif)
 
