@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Drawing-Based Interactive Character
-description: AI recognizes a hand drawing and turns it into a moving character driven by your body, face, and voice.
+description: Auto-recognizing and rigging hand drawings, then applying body motion, facial expressions, and speech.
 category: industry
 importance: 3
 lang: en
@@ -11,45 +11,41 @@ permalink: /en/projects/drawing-character/
 
 ## Overview
 
-Technology that recognizes a drawing on paper and turns it into a **moving character**. Your body motion, facial expressions, and even your voice are applied to the drawing — when you move, the drawing moves; type text, and the drawing speaks. (Carried out while at K3I.)
+- **Period:** Mar 2026 – Jul 2026 (K3I)
+- Auto-recognizes and rigs a user's drawing, then applies motion, expressions, and voice to make it a moving character
+- Extended from body-motion animation → real-time expression transfer → a talking character
 
-## ① A drawing that moves like you
+## ① Body-motion Animated Drawing
 
-- The **MediaPipe Pose model** finds 33 body joints in every webcam frame.
-- Those joint movements are converted into the standard animation format (BVH).
-- **Meta's AnimatedDrawings** automatically finds the character and its limbs in the hand drawing, and the converted motion is applied to it.
-- Motions recorded from the webcam, plus stock motions from Rokoko and Mixamo, are collected in the same format — so **any motion can drive any drawing**.
+- **MediaPipe Pose** extracts 33 body joints from the webcam → converted to **BVH motion**
+- **AnimatedDrawings** auto-detects the character and joints in the drawing → motion retargeting
+- Webcam, Rokoko, and Mixamo motions unified in a BVH library — one motion drives many drawings
 
 ![Drawing recognition and rigging flow](/assets/img/projects/figs/drawing-bvh-flow.gif)
 
-_The character and its joints are found automatically in the drawing, and applying motion makes it actually move._
+_Character detection → joint extraction → BVH motion_
 
 ![Motion retargeting](/assets/img/projects/figs/drawing-motion-retarget.gif)
 
-_When the user moves, multiple hand-drawn characters follow at the same time._
+_Simultaneous multi-character retargeting_
 
-## ② A drawing that mirrors your face — DrawFace Live
+## ② Real-time expression transfer — DrawFace Live
 
-Characters — a 3D head, 2D characters, and hand drawings — mirror your webcam expressions in real time. **Everything runs inside the browser: no server, and your face video never leaves your device.**
-
-- The **MediaPipe face model** finds 478 points on the face and converts them into **52 expression values** — blink, mouth open, smile, and so on.
-- Those values drive the 3D character's facial muscles and the drawing's deformation directly.
-- Experiments showed neural networks smear the art style of hand drawings, so hand drawings use **geometric deformation (ARAP) that bends the original strokes as-is**. Normally proportioned illustrations instead use the **LivePortrait model (TensorRT-accelerated, ~30 fps)**.
+- **MediaPipe FaceLandmarker** 478 landmarks → **ARKit 52-channel blendshapes**
+- Hand drawings use **ARAP geometric deformation** (original strokes preserved); standard-proportion illustrations use **LivePortrait TensorRT, 27–37 ms (~30 FPS)**
+- Runs entirely in the browser — no server, face video never leaves the device
 
 ![Expression mirroring](/assets/img/projects/figs/drawing-face-mirror.jpg)
 
-_Webcam expressions transferred onto the 3D character in real time._
+_ARKit 52-channel 3D expression mirroring_
 
-## ③ A drawing that talks — Talking Drawing Avatar
+## ③ Talking Drawing Avatar
 
-Drop in one drawing and some text, and **the drawing speaks with emotion.**
+- Local LLM (**EXAONE 3.5**) judges per-sentence emotion → applied to **edge-TTS** voice tone and facial expression together
+- **JoyVASA + LivePortrait** generate speech video (mouth interior pixels generated), fully local
+- TensorRT acceleration + fragment streaming + parallel emotion judging → playback start **4.8 s → 2.1 s**
 
-- A local LLM (**EXAONE 3.5**) judges the emotion of each sentence (joy, sadness, ...).
-- That emotion lands in both the **voice tone (edge-TTS)** and the **facial expression** at the same time.
-- **JoyVASA + LivePortrait** generate speech video where the mouth actually opens. Everything runs locally.
-- Accelerating only the bottleneck with TensorRT and streaming video while it is generated cut the **time until speech starts from 4.8 s to 2.1 s**.
-
-`MediaPipe` · `AnimatedDrawings` · `BVH` · `ARAP` · `WebGL` · `LivePortrait` · `TensorRT` · `JoyVASA` · `EXAONE 3.5` · `edge-TTS` · `FastAPI`
+`MediaPipe` · `AnimatedDrawings` · `BVH` · `ARAP` · `ARKit 52ch` · `WebGL` · `LivePortrait` · `TensorRT` · `JoyVASA` · `EXAONE 3.5` · `edge-TTS` · `FastAPI`
 
 **Code:** [github.com/ingon1026/drawface-live](https://github.com/ingon1026/drawface-live) · [github.com/ingon1026/talking-drawing-avatar](https://github.com/ingon1026/talking-drawing-avatar) · **Demo:** [HF DrawFace Live](https://ingon1-drawface-live.static.hf.space)
 
