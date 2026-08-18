@@ -11,7 +11,11 @@ nav: false
 
 **Vision AI Researcher, Vision AI Lab** · March 2026 – Present
 
-Research and development of vision models for AI transformation (AX) applications, spanning data, model design, evaluation, and deployment. Public project details are intentionally limited to avoid disclosing confidential company information.
+Research and development of Vision AI models for XR and Physical AI products, from model design and evaluation to edge deployment.
+
+- [Zero-Shot Object Recognition & 3D Pose Estimation](/en/projects/pose-anything/) — SAM3 + RGB-D robot perception pipeline
+- [Gaussian Splatting XR Space Reconstruction & Localization](/en/projects/xr-splat/) — 360° video and RGB-D SLAM approaches
+- [Drawing-Based Interactive Character](/en/projects/drawing-character/) — real-time body motion, expression, and speech
 
 ## Graduate research
 

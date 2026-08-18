@@ -11,7 +11,11 @@ nav: false
 
 **Vision AI 연구원, Vision AI Lab** · 2026년 3월 – 현재
 
-AI 전환(AX) 애플리케이션을 위한 비전 모델을 데이터, 모델 설계, 평가, 배포 전반에 걸쳐 연구·개발하고 있습니다. 회사 기밀 보호를 위해 공개 프로젝트 상세는 의도적으로 제한합니다.
+XR·Physical AI 제품에 쓰이는 Vision AI 모델을 설계·평가부터 엣지 배포까지 연구·개발하고 있습니다.
+
+- [제로샷 객체 인식·3D Pose 추정 시스템](/projects/pose-anything/) — SAM3 + RGB-D 로봇 인지 파이프라인
+- [Gaussian Splatting 기반 XR 공간 재구성·위치추정](/projects/xr-splat/) — 360°·RGB-D SLAM 두 접근
+- [사용자 그림 기반 인터랙티브 캐릭터](/projects/drawing-character/) — 몸동작·표정·음성 실시간 적용
 
 ## 대학원 연구
 

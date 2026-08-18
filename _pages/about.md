@@ -51,6 +51,7 @@ latest_posts:
     <div class="yd-news">
       <h3>최근 소식</h3>
       <ul>
+        <li><span>2026.08</span> 제로샷 객체 인식·3D Pose 추정 파이프라인 <a href="/projects/pose-anything/">pose-anything</a>을 공개했습니다.</li>
         <li><span>2026.06</span> "Hybrid LLM Navigation System for Edge-Cloud Reasoning" 논문이 JKICS(51권 6호)에 게재되었습니다.</li>
         <li><span>2026.03</span> K3I Vision AI Lab에 Vision AI 연구원으로 입사했습니다.</li>
         <li><span>2026.02</span> 금오공과대학교 IT융복합공학 석사과정을 졸업했습니다(WENS 연구실).</li>

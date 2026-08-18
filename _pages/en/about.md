@@ -52,6 +52,7 @@ latest_posts:
     <div class="yd-news">
       <h3>Recent News</h3>
       <ul>
+        <li><span>Aug 2026</span> Released <a href="/en/projects/pose-anything/">pose-anything</a>, a zero-shot object recognition and 3D pose estimation pipeline.</li>
         <li><span>Jun 2026</span> "Hybrid LLM Navigation System for Edge-Cloud Reasoning" was published in JKICS (vol. 51, no. 6).</li>
         <li><span>Mar 2026</span> Joined K3I as a Vision AI Researcher (Vision AI Lab).</li>
         <li><span>Feb 2026</span> Completed my M.S. in IT Convergence Engineering at Kumoh National Institute of Technology (WENS Lab).</li>
