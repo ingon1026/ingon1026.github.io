@@ -17,8 +17,8 @@ nav: false
       <h3><a href="/en/projects/pose-anything/">Zero-Shot Object Recognition &amp; 3D Pose Estimation</a></h3>
       <p class="prj-desc">Detect and track arbitrary objects from a text prompt, publish RGB-D 3D pose with confidence over ROS2 — no retraining, no CAD, 9–13 FPS.</p>
       <p class="prj-links">
-        <a href="https://github.com/ingon1026/pose-anything">Code</a>
-        <a href="https://hub.docker.com/r/ingon1026/pose-anything">Docker</a>
+        <a href="https://github.com/ingon1026/pose-anything"><i class="fa-brands fa-github"></i> Source</a>
+        <a href="https://hub.docker.com/r/ingon1026/pose-anything"><i class="fa-brands fa-docker"></i> Docker</a>
         <a href="/en/projects/pose-anything/">Details →</a>
       </p>
       <p class="prj-tags">SAM3 · ROS2 Jazzy · Open3D · RealSense · Isaac Sim</p>
@@ -27,14 +27,14 @@ nav: false
 
   <div class="prj-item">
     <a class="prj-thumb" href="/en/projects/xr-splat/">
-      <img src="/assets/img/projects/xr-splat.jpg" alt="Gaussian Splatting XR Space Reconstruction and Localization" />
+      <img src="/assets/img/projects/figs/xrsplat-mvs-cloud.jpg" alt="Gaussian Splatting XR Space Reconstruction and Localization" />
     </a>
     <div class="prj-body">
       <h3><a href="/en/projects/xr-splat/">Gaussian Splatting XR Space Reconstruction &amp; Localization</a></h3>
       <p class="prj-desc">Space assets and indoor localization in one coordinate frame, via 360° video and RGB-D SLAM — 123 FPS rendering, 100% global relocalization at 62.8 FPS.</p>
       <p class="prj-links">
-        <a href="https://github.com/ingon1026/xr-splat">Code</a>
-        <a href="https://huggingface.co/spaces/ingon1/xr-splat-demo">Demo</a>
+        <a class="prj-btn" href="https://huggingface.co/spaces/ingon1/xr-splat-demo">🤗 Live demo</a>
+        <a href="https://github.com/ingon1026/xr-splat"><i class="fa-brands fa-github"></i> Source</a>
         <a href="/en/projects/xr-splat/">Details →</a>
       </p>
       <p class="prj-tags">3DGS · ORB-SLAM3 · OpenSfM · Insta360 · WebGL</p>
@@ -43,14 +43,14 @@ nav: false
 
   <div class="prj-item">
     <a class="prj-thumb" href="/en/projects/drawing-character/">
-      <img src="/assets/img/projects/drawing-character.png" alt="Drawing-Based Interactive Character" />
+      <img src="/assets/img/projects/drawing-character.gif" alt="Drawing-Based Interactive Character" />
     </a>
     <div class="prj-body">
       <h3><a href="/en/projects/drawing-character/">Drawing-Based Interactive Character</a></h3>
       <p class="prj-desc">Auto-rig hand drawings and drive them with the user's body motion, facial expressions, and speech in real time — talking video generation 4.8→2.1 s.</p>
       <p class="prj-links">
-        <a href="https://github.com/ingon1026/drawface-live">Code</a>
-        <a href="https://ingon1-drawface-live.static.hf.space">Demo</a>
+        <a class="prj-btn" href="https://ingon1-drawface-live.static.hf.space">🤗 Live demo</a>
+        <a href="https://github.com/ingon1026/drawface-live"><i class="fa-brands fa-github"></i> Source</a>
         <a href="/en/projects/drawing-character/">Details →</a>
       </p>
       <p class="prj-tags">MediaPipe · ARKit 52ch · LivePortrait · TensorRT · WebGL</p>
@@ -121,35 +121,6 @@ nav: false
     </div>
   </div>
 
-  <div class="prj-item">
-    <a class="prj-thumb" href="/en/projects/fewshot-writer-id/">
-      <img src="/assets/img/projects/fewshot-writer-id.png" alt="Few-Shot Writer Identification" />
-    </a>
-    <div class="prj-body">
-      <h3><a href="/en/projects/fewshot-writer-id/">Few-Shot Writer Identification with Vision Transformers</a></h3>
-      <p class="prj-desc">ViT-based prototypical meta-learning that identifies writers from a few handwriting samples — extended into a patent application.</p>
-      <p class="prj-links">
-        <a href="/en/publications/">Paper · KICS 2025</a>
-        <a href="/en/patents/">Patent</a>
-        <a href="/en/projects/fewshot-writer-id/">Details →</a>
-      </p>
-      <p class="prj-tags">Vision Transformer · Meta-learning · PyTorch</p>
-    </div>
-  </div>
-
-  <div class="prj-item">
-    <a class="prj-thumb" href="/en/projects/fault-detection/">
-      <img src="/assets/img/projects/fault-detection.png" alt="Deep-Learning Camera Fault Detection" />
-    </a>
-    <div class="prj-body">
-      <h3><a href="/en/projects/fault-detection/">Deep-Learning Camera Fault Detection</a></h3>
-      <p class="prj-desc">Deep-learning pipeline that detects and cleans camera noise and environmental artifacts during drone operation.</p>
-      <p class="prj-links">
-        <a href="/en/projects/fault-detection/">Details →</a>
-      </p>
-      <p class="prj-tags">OpenCV · PyTorch · Zero-shot</p>
-    </div>
-  </div>
 </div>
 
 <style>
@@ -226,6 +197,18 @@ nav: false
   .prj-links a:hover {
     color: var(--global-theme-color, #0056b3);
     border-color: var(--global-theme-color, #0056b3);
+  }
+
+  .prj-links a.prj-btn {
+    background: var(--global-theme-color, #0056b3);
+    border: 1px solid var(--global-theme-color, #0056b3);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .prj-links a.prj-btn:hover {
+    color: #fff;
+    opacity: 0.85;
   }
 
   .prj-tags {

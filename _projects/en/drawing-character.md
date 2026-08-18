@@ -5,7 +5,7 @@ description: Recognizing and rigging hand drawings, then driving them with body 
 category: industry
 importance: 3
 lang: en
-img: assets/img/projects/drawing-character.png
+img: assets/img/projects/drawing-character.gif
 permalink: /en/projects/drawing-character/
 ---
 
@@ -21,7 +21,11 @@ MediaPipe Pose extracts **33 body landmarks** per webcam frame, converted into B
 
 _The flow from a hand drawing — automatic character detection and joint extraction — to animation combined with BVH motion._
 
-![Motion retargeting](/assets/img/projects/figs/drawing-motion-retarget.jpg)
+![Animated drawing result](/assets/img/projects/figs/drawing-animated-result.gif)
+
+_The hand-drawn character actually moving once BVH motion is applied._
+
+![Motion retargeting](/assets/img/projects/figs/drawing-motion-retarget.gif)
 
 _A user's actual movement retargeted onto multiple hand-drawn characters at once._
 

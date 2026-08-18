@@ -18,8 +18,8 @@ nav_order: 2
       <h3><a href="/projects/pose-anything/">제로샷 객체 인식·3D Pose 추정 시스템</a></h3>
       <p class="prj-desc">텍스트 프롬프트만으로 임의 물체를 인식·추적하고 RGB-D로 3D 자세·신뢰도를 ROS2로 발행 — 재학습 없음, CAD 없음, 9~13 FPS.</p>
       <p class="prj-links">
-        <a href="https://github.com/ingon1026/pose-anything">Code</a>
-        <a href="https://hub.docker.com/r/ingon1026/pose-anything">Docker</a>
+        <a href="https://github.com/ingon1026/pose-anything"><i class="fa-brands fa-github"></i> Source</a>
+        <a href="https://hub.docker.com/r/ingon1026/pose-anything"><i class="fa-brands fa-docker"></i> Docker</a>
         <a href="/projects/pose-anything/">Details →</a>
       </p>
       <p class="prj-tags">SAM3 · ROS2 Jazzy · Open3D · RealSense · Isaac Sim</p>
@@ -28,14 +28,14 @@ nav_order: 2
 
   <div class="prj-item">
     <a class="prj-thumb" href="/projects/xr-splat/">
-      <img src="/assets/img/projects/xr-splat.jpg" alt="Gaussian Splatting 기반 XR 공간 재구성·위치추정" />
+      <img src="/assets/img/projects/figs/xrsplat-mvs-cloud.jpg" alt="Gaussian Splatting 기반 XR 공간 재구성·위치추정" />
     </a>
     <div class="prj-body">
       <h3><a href="/projects/xr-splat/">Gaussian Splatting 기반 XR 공간 재구성·위치추정</a></h3>
       <p class="prj-desc">360° 영상과 RGB-D SLAM 두 접근으로 공간 자산과 실내 위치추정을 한 좌표계에서 — 렌더 123 FPS, 전역 위치추정 100%·62.8 FPS.</p>
       <p class="prj-links">
-        <a href="https://github.com/ingon1026/xr-splat">Code</a>
-        <a href="https://huggingface.co/spaces/ingon1/xr-splat-demo">Demo</a>
+        <a class="prj-btn" href="https://huggingface.co/spaces/ingon1/xr-splat-demo">🤗 Live demo</a>
+        <a href="https://github.com/ingon1026/xr-splat"><i class="fa-brands fa-github"></i> Source</a>
         <a href="/projects/xr-splat/">Details →</a>
       </p>
       <p class="prj-tags">3DGS · ORB-SLAM3 · OpenSfM · Insta360 · WebGL</p>
@@ -44,14 +44,14 @@ nav_order: 2
 
   <div class="prj-item">
     <a class="prj-thumb" href="/projects/drawing-character/">
-      <img src="/assets/img/projects/drawing-character.png" alt="사용자 그림 기반 인터랙티브 캐릭터" />
+      <img src="/assets/img/projects/drawing-character.gif" alt="사용자 그림 기반 인터랙티브 캐릭터" />
     </a>
     <div class="prj-body">
       <h3><a href="/projects/drawing-character/">사용자 그림 기반 인터랙티브 캐릭터</a></h3>
       <p class="prj-desc">손그림을 자동 인식·리깅하고 사용자의 몸동작·표정·음성을 실시간으로 입히는 캐릭터 기술 — 발화 영상 생성 4.8→2.1초.</p>
       <p class="prj-links">
-        <a href="https://github.com/ingon1026/drawface-live">Code</a>
-        <a href="https://ingon1-drawface-live.static.hf.space">Demo</a>
+        <a class="prj-btn" href="https://ingon1-drawface-live.static.hf.space">🤗 Live demo</a>
+        <a href="https://github.com/ingon1026/drawface-live"><i class="fa-brands fa-github"></i> Source</a>
         <a href="/projects/drawing-character/">Details →</a>
       </p>
       <p class="prj-tags">MediaPipe · ARKit 52ch · LivePortrait · TensorRT · WebGL</p>
@@ -122,35 +122,6 @@ nav_order: 2
     </div>
   </div>
 
-  <div class="prj-item">
-    <a class="prj-thumb" href="/projects/fewshot-writer-id/">
-      <img src="/assets/img/projects/fewshot-writer-id.png" alt="소량 샘플 필적 작성자 식별" />
-    </a>
-    <div class="prj-body">
-      <h3><a href="/projects/fewshot-writer-id/">소량 샘플 필적 작성자 식별 (Vision Transformer)</a></h3>
-      <p class="prj-desc">소량의 필적 샘플로 작성자를 식별하는 ViT 기반 프로토타입 메타러닝 — 특허 출원으로 연계.</p>
-      <p class="prj-links">
-        <a href="/publications/">Paper · KICS 2025</a>
-        <a href="/patents/">Patent</a>
-        <a href="/projects/fewshot-writer-id/">Details →</a>
-      </p>
-      <p class="prj-tags">Vision Transformer · Meta-learning · PyTorch</p>
-    </div>
-  </div>
-
-  <div class="prj-item">
-    <a class="prj-thumb" href="/projects/fault-detection/">
-      <img src="/assets/img/projects/fault-detection.png" alt="딥러닝 기반 카메라 Fault Detection" />
-    </a>
-    <div class="prj-body">
-      <h3><a href="/projects/fault-detection/">딥러닝 기반 카메라 Fault Detection</a></h3>
-      <p class="prj-desc">드론 운용 중 카메라 노이즈·환경 이상을 탐지하고 프레임을 정제하는 딥러닝 파이프라인.</p>
-      <p class="prj-links">
-        <a href="/projects/fault-detection/">Details →</a>
-      </p>
-      <p class="prj-tags">OpenCV · PyTorch · Zero-shot</p>
-    </div>
-  </div>
 </div>
 
 <style>
@@ -227,6 +198,18 @@ nav_order: 2
   .prj-links a:hover {
     color: var(--global-theme-color, #0056b3);
     border-color: var(--global-theme-color, #0056b3);
+  }
+
+  .prj-links a.prj-btn {
+    background: var(--global-theme-color, #0056b3);
+    border: 1px solid var(--global-theme-color, #0056b3);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .prj-links a.prj-btn:hover {
+    color: #fff;
+    opacity: 0.85;
   }
 
   .prj-tags {

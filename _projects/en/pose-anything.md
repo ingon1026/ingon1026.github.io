@@ -33,7 +33,7 @@ _Live demo — objects specified by text prompt are detected and tracked while 3
 
 _ROS2 node/topic layout — camera input and prompts flow into perception, which publishes /perception/detections, markers, and debug_image for RViz and robot consumer nodes._
 
-![Published poses](/assets/img/projects/figs/pose-detections.png)
+![Published poses](/assets/img/projects/figs/pose-detections.gif)
 
 _What the robot actually receives — during occlusion, pose publication is withheld and resumes under the same ID on reappearance. Coordinates that cannot be trusted are never sent to the robot._
 

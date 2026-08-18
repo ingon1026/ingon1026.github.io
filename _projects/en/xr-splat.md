@@ -5,7 +5,7 @@ description: Two approaches — 360° video and RGB-D SLAM — to photorealistic
 category: industry
 importance: 2
 lang: en
-img: assets/img/projects/xr-splat.jpg
+img: assets/img/projects/figs/xrsplat-mvs-cloud.jpg
 permalink: /en/projects/xr-splat/
 ---
 

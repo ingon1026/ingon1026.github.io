@@ -5,7 +5,7 @@ description: 360° 영상과 RGB-D SLAM 두 접근으로 공간 자산 생성과
 category: industry
 importance: 2
 lang: ko
-img: assets/img/projects/xr-splat.jpg
+img: assets/img/projects/figs/xrsplat-mvs-cloud.jpg
 permalink: /projects/xr-splat/
 ---
 

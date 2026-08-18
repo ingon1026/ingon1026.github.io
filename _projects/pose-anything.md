@@ -33,7 +33,7 @@ _실시간 데모 — 텍스트 프롬프트로 지정한 물체들을 검출·�
 
 _ROS2 노드·토픽 구성 — 카메라 입력과 프롬프트를 받아 /perception/detections·markers·debug_image를 발행하고 RViz·로봇 노드가 소비합니다._
 
-![발행 시점의 3D 자세](/assets/img/projects/figs/pose-detections.png)
+![발행 시점의 3D 자세](/assets/img/projects/figs/pose-detections.gif)
 
 _로봇이 실제 받는 것 — 가림 중에는 자세 발행을 보류하고("pose withheld") 재등장 시 같은 ID로 재개합니다. 신뢰하지 못하는 좌표는 로봇에 보내지 않는다는 발행 철학입니다._
 

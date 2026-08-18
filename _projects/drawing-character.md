@@ -5,7 +5,7 @@ description: 손그림을 인식·리깅하고 사용자의 몸동작·표정·�
 category: industry
 importance: 3
 lang: ko
-img: assets/img/projects/drawing-character.png
+img: assets/img/projects/drawing-character.gif
 permalink: /projects/drawing-character/
 ---
 
@@ -21,7 +21,11 @@ permalink: /projects/drawing-character/
 
 _손그림에서 캐릭터 영역과 관절을 자동 인식하고, BVH 모션을 결합해 애니메이션을 생성하는 흐름._
 
-![모션 리타게팅](/assets/img/projects/figs/drawing-motion-retarget.jpg)
+![모션이 결합된 손그림](/assets/img/projects/figs/drawing-animated-result.gif)
+
+_BVH 모션이 결합되어 실제로 움직이는 손그림 캐릭터._
+
+![모션 리타게팅](/assets/img/projects/figs/drawing-motion-retarget.gif)
 
 _사용자의 실제 동작이 여러 손그림 캐릭터에 동시에 리타게팅되는 모습._
 

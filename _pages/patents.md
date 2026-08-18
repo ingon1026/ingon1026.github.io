@@ -17,7 +17,7 @@ nav_order: 4
   <div class="pt-item">
     <h3>소량의 필적 샘플을 활용한 비젼 트랜스포머(Vision Transformer) 기반 메타러닝 작성자 식별 방법</h3>
     <p class="pt-ko">Vision Transformer-Based Meta-Learning Method for Writer Identification Using a Small Number of Handwriting Samples</p>
-    <p class="pt-meta">출원번호 10-2025-0134352 · 출원일 2025.09.18 · 관련 프로젝트: <a href="/projects/fewshot-writer-id/">소량 샘플 필적 식별</a></p>
+    <p class="pt-meta">출원번호 10-2025-0134352 · 출원일 2025.09.18</p>
   </div>
 
   <div class="pt-item">

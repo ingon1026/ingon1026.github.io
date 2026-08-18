@@ -16,7 +16,7 @@ nav: false
   <div class="pt-item">
     <h3>Vision Transformer-Based Meta-Learning Method for Writer Identification Using a Small Number of Handwriting Samples</h3>
     <p class="pt-ko">소량의 필적 샘플을 활용한 비젼 트랜스포머(Vision Transformer) 기반 메타러닝 작성자 식별 방법</p>
-    <p class="pt-meta">Application no. 10-2025-0134352 · Filed 2025.09.18 · Related: <a href="/en/projects/fewshot-writer-id/">Few-Shot Writer Identification</a></p>
+    <p class="pt-meta">Application no. 10-2025-0134352 · Filed 2025.09.18</p>
   </div>
 
   <div class="pt-item">
