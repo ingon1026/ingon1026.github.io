@@ -7,7 +7,7 @@ lang: ko
 nav: false
 ---
 
-## K3I
+## (주)케이쓰리아이
 
 **Vision AI 연구원, Vision AI Lab** · 2026년 3월 – 현재
 
