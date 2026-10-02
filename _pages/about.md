@@ -20,7 +20,17 @@ latest_posts:
 ---
 
 <div class="yd-hero">
-  <img class="yd-avatar" src="/assets/img/prof_pic.jpg" alt="김인곤 — Vision AI 연구원" />
+  <div class="yd-side">
+    <img class="yd-avatar" src="/assets/img/prof_pic.jpg" alt="김인곤 — Vision AI 연구원" />
+    <div class="yd-links yd-icons">
+      <a href="https://scholar.google.com/citations?user=76h0N_QAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+      <a href="https://github.com/ingon1026" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://huggingface.co/ingon1" target="_blank" rel="noopener noreferrer" aria-label="Hugging Face Demo" title="Hugging Face Demo">🤗</a>
+    </div>
+    <div class="yd-links">
+      <a href="/assets/pdf/KimInGon_CV.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i> CV</a>
+    </div>
+  </div>
   <div class="yd-hero-text">
     <h1 class="yd-name">김인곤</h1>
     <p class="yd-role">Vision AI 연구원</p>
@@ -39,15 +49,6 @@ latest_posts:
       연구 관심사는 Vision AI, 그중에서도 로봇 비전·SLAM·내비게이션·자율주행이며, 인지 모델이 실제 시스템 안에서 안정적으로 동작하도록 만드는 데
       집중합니다.
     </p>
-    <div class="yd-links">
-      <a href="mailto:ingon4359@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-      <a href="https://scholar.google.com/citations?user=76h0N_QAAAAJ" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i> Scholar</a>
-      <a href="https://github.com/ingon1026" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-      <a href="https://www.linkedin.com/in/ingon1026" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-      <a href="https://huggingface.co/ingon1" target="_blank" rel="noopener noreferrer">🤗 Demo</a>
-      <a href="https://velog.io/@ingon1026" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-pen-nib"></i> Blog</a>
-      <a href="/assets/pdf/KimInGon_CV.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i> CV</a>
-    </div>
     <div class="yd-news">
       <h3>최근 소식</h3>
       <ul>
@@ -125,6 +126,23 @@ latest_posts:
     font-size: 0.95rem;
     line-height: 1.65;
     margin: 0 0 0.7rem;
+  }
+
+  /* left column: avatar, icon links, CV */
+  .yd-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .yd-icons a {
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 0;
+    justify-content: center;
+    font-size: 1.1rem;
   }
 
   /* link buttons */
