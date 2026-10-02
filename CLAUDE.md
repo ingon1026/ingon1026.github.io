@@ -2,9 +2,9 @@
 
 김인곤 개인 포트폴리오 사이트(https://ingon1026.github.io). al-folio v1.x 스타터를 fork한 **사용자 사이트**예요.
 
-## 주의: 템플릿 문서는 이 사이트와 다름
+## 주의: al-folio 원본과 다른 점
 
-`AGENTS.md`, `docs/`는 al-folio 원본 저장소용 문서예요. 아래 항목은 이 사이트에 맞지 않아요.
+al-folio 원본 문서(https://github.com/alshedivat/al-folio)를 참고할 때, 아래 항목은 이 사이트에 맞지 않아요.
 
 - **baseurl은 비어 있음.** `/al-folio`가 아니에요. `--baseurl` 옵션 없이 빌드하고, dev 서버 주소는 `http://localhost:4000/`예요.
 - **`_includes/header.liquid`는 의도된 override.** 언어 전환 navbar예요. 그래서 `npm run lint:style-contract`는 항상 실패하는데, 정상이에요. 사용자 사이트는 gem 파일을 override해도 돼요.
