@@ -1,48 +1,38 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+김인곤 개인 포트폴리오 사이트(https://ingon1026.github.io). al-folio v1.x 스타터를 fork한 **사용자 사이트**예요.
 
-@AGENTS.md
+## 주의: 템플릿 문서는 이 사이트와 다름
 
-`AGENTS.md` (imported above) is the **authoritative** agent entry point: change routing, the stop sign for gem-owned paths, the three silent failure modes, and the validated command set. Keep it short and ecosystem-neutral. Cross-repo architecture — the wrapper/tag/gem delegation table, feature gating, the v1 config contract, local overrides — lives in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md); area-to-gem ownership lives in [`docs/BOUNDARIES.md`](docs/BOUNDARIES.md).
+`AGENTS.md`, `docs/`는 al-folio 원본 저장소용 문서예요. 아래 항목은 이 사이트에 맞지 않아요.
 
-**Read those three before editing anything.** Everything below is Claude-specific or longer-form operational detail that does not belong in the short entry point. Do not restate facts from those files here — link to them.
+- **baseurl은 비어 있음.** `/al-folio`가 아니에요. `--baseurl` 옵션 없이 빌드하고, dev 서버 주소는 `http://localhost:4000/`예요.
+- **`_includes/header.liquid`는 의도된 override.** 언어 전환 navbar예요. 그래서 `npm run lint:style-contract`는 항상 실패하는데, 정상이에요. 사용자 사이트는 gem 파일을 override해도 돼요.
+- `test/integration_*.sh`, `test/visual/`은 템플릿 유지보수용이에요. 이 사이트 변경을 검증하는 용도가 아니에요.
 
-## Daily dev loop
+## 콘텐츠 규칙
+
+- **한국어가 기본, 영어는 짝 파일.** `_pages/X.md` ↔ `_pages/en/X.md`, `_projects/X.md` ↔ `_projects/en/X.md` 구조예요. front matter에 `lang: ko|en`을 넣고, 영어판 permalink는 `/en/...`이에요. 한쪽을 고치면 다른 쪽도 같이 고쳐요.
+- 프로젝트는 `category: industry | research`로 나뉘고, `importance`로 순서를 정해요.
+- 한국어 페이지에는 회사명을 `(주)케이쓰리아이`, 영어 페이지에는 `K3I`로 써요.
+- 뉴스(`_news/`)와 논문(`_bibliography/papers.bib`)은 언어 구분 없이 하나씩 있어요.
+- About·Patents 스타일(`yd-*`, `pt-*`)은 각 페이지 안의 `<style>` 블록에 있어요. ko/en 파일에 같은 블록이 복사돼 있어요.
+- `assets/css/main.scss`는 gem 파일을 override한 거예요. 하단의 accent 색만 추가했어요. gem을 업그레이드할 때는 `@use` 목록을 gem과 맞춰야 해요.
+- 논문·특허 정보는 원문(게재 논문, KIPO 접수증)과 대조한 값이에요. 추측으로 바꾸지 않아요.
+
+## 빌드 확인
+
+로컬에 Ruby가 없어서 Docker로 빌드해요. 이 PC의 `~/.docker/config.json`에 WSL 시절 `credsStore`가 남아 있다면 pull이 실패해요. 그럴 땐 `DOCKER_CONFIG=<빈 디렉터리>`를 앞에 붙여 실행해요.
 
 ```bash
-bundle install                                # ruby gems
-bundle exec jekyll serve                      # dev server → http://localhost:4000/al-folio/  (NOTE baseurl)
-bundle exec jekyll build --baseurl /al-folio  # production-style build to _site/
-bash test/integration_distill.sh              # run ONE integration test (any of the six in test/)
-npm run test:visual:update                    # refresh playwright snapshots after intentional UI change
-bundle exec al-folio upgrade apply --safe     # deterministic codemods (font-weight-* → font-*, remote→local URLs)
-bundle exec al-folio upgrade overrides diff <path>    # then `overrides accept <path>` to acknowledge an override
+docker run --rm -v "$PWD":/srv -w /srv -e JEKYLL_ENV=production ruby:3.3.5 bash -c \
+  'apt-get update -qq && apt-get install -y -qq imagemagick nodejs >/dev/null &&
+   bundle install --quiet && bundle exec jekyll build -d /tmp/_site'
 ```
 
-## Optional toolchains
+빌드 중 나오는 `drawing-bvh-flow-1400.webp` 중복 생성 경고는 원래 있던 거예요 (빌드 실패 아님).
 
-- **Jupyter posts.** `bin/setup-python-deps` installs _only_ `jupyter` and `nbconvert` (via `pip --user --break-system-packages`) for `jekyll-jupyter-notebook`. It does **not** read `requirements.txt`. Missing `jupyter-nbconvert` is warn-and-continue; notebook rendering is skipped.
-- **Everything else Python.** [`requirements.txt`](requirements.txt) is the fuller list and must be installed separately (`python3 -m pip install -r requirements.txt`): `rendercv[full]` for CV rendering, `scholarly` for `bin/update_scholar_citations.py`, plus `nbconvert` and `pyyaml`.
-- **Responsive images.** `imagemagick.enabled: true` needs ImageMagick `convert` on `PATH`.
-- **Manual deploy.** `bin/deploy` is the manual `gh-pages` build + purgecss + force-push path; CI normally deploys. `purgecss` is not a devDependency — install it with `npm install -g purgecss`.
+## 배포 · 커밋
 
-## Docker serving model (v1-specific)
-
-`docker compose up -d` bind-mounts the repo to `/srv/jekyll` and runs `bin/entry_point.sh`, which serves with `--force_polling --destination /tmp/_site`. The build output deliberately goes to **container-local `/tmp/_site`, not the bind-mounted `_site`** — writing `_site` back across the host bind mount caused write deadlocks. The container also `inotifywait`s `_config.yml` and restarts Jekyll on change (config edits aren't hot-reloaded by `--watch`). Verify with the `/al-folio` baseurl: `curl -fsS http://127.0.0.1:8080/al-folio/`. `docker-compose-slim.yml` pulls a prebuilt `:slim` image instead of building locally.
-
-## CI gates and the style contract
-
-`npm run lint:style-contract` (`test/style_contract.js`) is the automated enforcement of the thin-starter boundary and will fail CI if you cross it. Beyond the forbidden paths listed in `AGENTS.md`, it also asserts that `_config.yml` keeps `theme: al_folio_core` and the required plugins, that the `third_party_libraries` SRI pins are present, and that the `al_math` Gemfile pin stays on a released version rather than a git branch.
-
-Other gates:
-
-- `unit-tests.yml` — style contract plus all six `test/integration_*.sh` scripts (`comments`, `plugin_toggles`, `distill`, `bootstrap_compat`, `upgrade_cli`, `css_minify`).
-- `visual-regression.yml` — Playwright on chromium + webkit, diffing the candidate build against a `v0.16.3` baseline worktree served on `:4100` via `BASELINE_URL`.
-- `upgrade-check.yml` — `bundle exec al-folio upgrade audit`.
-- `prettier.yml` — Prettier with `@shopify/prettier-plugin-liquid` and `printWidth: 150`. Run `npm run lint:prettier` before pushing; `npx prettier . --write` fixes.
-- `update-tocs.yml` — regenerates `<!--ts-->…<!--te-->` blocks in changed root and `docs/` Markdown files. If you add or rename a heading, expect a follow-up auto-commit on `main`.
-
-## Gem version pins
-
-`Gemfile` pins every `al-*` gem to an exact released version in `group :al_folio_plugins`, and `_config.yml` lists the same gems under `plugins:`. Read the current pins from the `Gemfile` rather than trusting any version quoted in prose — including here. To test a gem fix against this site, repoint the `Gemfile` at a sibling checkout (`path:`, `git:`, or `branch:`) and `bundle install`; see [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md#working-on-a-gem-alongside-the-starter). Revert the pin before committing.
+- `main`에 push하면 `deploy.yml`이 빌드해서 `gh-pages` 브랜치로 배포돼요. push가 곧 공개예요.
+- 커밋은 Conventional Commits 형식으로 써요 (`feat(projects): ...`, `fix(about): ...`).
